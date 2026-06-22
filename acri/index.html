@@ -7,7 +7,7 @@
 <meta name="description" content="あっぷるキャピタルグループの研究機関「あっぷる総研(ACRI)」。公的データ×AIで、雪国の不動産と地域経済を解剖します。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700;900&family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#f0f5fc; --navy:#0d3066; --text:#1a3a5c; --muted:#5a8ab5; --dim:#a0b8d0;
@@ -15,7 +15,7 @@
   --glass:rgba(255,255,255,0.62); --glass-border:rgba(255,255,255,0.75); --border-blue:rgba(26,95,180,0.12);
   --shadow-sm:0 2px 12px rgba(0,40,100,0.05); --shadow:0 6px 28px rgba(0,40,100,0.08); --shadow-lg:0 16px 48px rgba(0,40,100,0.12);
   --radius:20px; --radius-md:14px;
-  --font-sans:'Noto Sans JP',system-ui,sans-serif; --font-serif:'Noto Serif JP',serif; --font-num:'Inter','Noto Sans JP',sans-serif;
+  --font-sans:'Noto Sans JP',system-ui,sans-serif; --font-serif:'Noto Sans JP',system-ui,sans-serif; --font-num:'Inter','Noto Sans JP',sans-serif;
   --grad:linear-gradient(135deg,#1a5fb4 0%,#0d3066 100%);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -84,6 +84,11 @@ body::before{ content:""; position:fixed; inset:-10%; z-index:0; pointer-events:
 
 footer{ position:relative; z-index:1; text-align:center; color:var(--muted); font-size:.74rem; line-height:1.8; padding:clamp(1.5rem,4vw,2.5rem) 1rem; max-width:1080px; margin:0 auto;}
 footer .disc{ color:var(--dim); font-size:.7rem; margin-top:.4rem;}
+
+/* タイポグラフィ調整：Noto Sans系のかっこいい見出し＋改行の自動最適化 */
+h1, h2, h3, .sec-title, .card h3 { text-wrap: balance; letter-spacing: -0.01em; }
+.hero h1 { letter-spacing: -0.02em; font-feature-settings: "palt" 1; font-weight: 900; }
+.hero p, .card p, .about .it p, .card .killer { text-wrap: pretty; }
 </style>
 </head>
 <body>
@@ -103,9 +108,9 @@ footer .disc{ color:var(--dim); font-size:.7rem; margin-top:.4rem;}
   <!-- HERO -->
   <section class="hero">
     <div class="kicker"><span class="dot"></span>社内シンクタンク ／ Research Institute</div>
-    <h1>公的データ × AI で、<br>雪国の不動産と地域経済を解剖する。</h1>
-    <div class="en">Apple Capital Research Institute（ACRI）</div>
-    <p>あっぷる総研は、あっぷるキャピタルグループの研究機関です。国土交通省・EDINET・気象・自治体オープンデータなどの「公的データ」と、AIによる大量並列分析だけを武器に、人口縮小フェーズに入る地方の不動産と地域経済を、実名で解剖し公開します。一次ソースで裏取りした事実のみを論じ、敵対的査読を通過した研究だけを世に出します。</p>
+    <h1>AI×統計データで、地方の収益不動産と地域経済を解剖する</h1>
+    <div class="en">あっぷる総研 ／ Apple Capital Research Institute（ACRI）</div>
+    <p>あっぷるキャピタルグループの研究機関です。国交省・EDINET・気象・自治体オープンデータなどの公的データと、AIによる大量並列分析を武器に、人口が縮小していく地方都市で「不動産という資産がどこに残り、どこで消えるのか」を解き明かします。裏取りできない数値は本文に書かず、敵対的査読を通過した研究だけを公開します。</p>
     <div class="tags">
       <span class="tag">地域経済 × 不動産</span>
       <span class="tag">超雪国型リアルエステート</span>
