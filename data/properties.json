@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated_at": "2026-06-11T01:15:34.414715",
+    "generated_at": "2026-07-15T16:57:38.259175",
     "source": "たいせい決算.xlsm",
-    "latest_actual_month": "2026-05",
+    "latest_actual_month": "2026-06",
     "months": [
       "2020-06",
       "2020-07",
@@ -102,18 +102,18 @@
         {
           "initial_balance": 61500000.0,
           "rate": 0.025,
-          "current_balance": 54805975.0
+          "current_balance": 54700294.0
         },
         {
           "initial_balance": 0,
           "rate": 0.004,
-          "current_balance": 1274000.0
+          "current_balance": 1232000.0
         }
       ],
       "occupancy": {
-        "occupied": 7,
+        "occupied": 8,
         "total": 10,
-        "rate": 70.0
+        "rate": 80.0
       },
       "monthly": [
         {
@@ -1205,61 +1205,66 @@
         },
         {
           "month": "2026-06",
-          "rent_total": 456351.0,
-          "expense_total": 23615.0,
+          "rent_total": 513719.0,
+          "expense_total": 42090.0,
           "debt_service": 262238.0,
-          "cashflow": 212876.0,
+          "cashflow": 251769.0,
           "expense_details": {
-            "管理委託料": -23065.0,
-            "送金事務手数料": -550.0
+            "管理委託料": -20240.0,
+            "修繕費等": -38500.0,
+            "送金事務手数料": -550.0,
+            "消防設備(総合点検)": -33000.0,
+            "広告料": -52800.0,
+            "入居時クリーニング代": 55000.0,
+            "雑収入": 48000.0
           },
           "loan_balance": 55932294.0,
-          "occupied": 7,
+          "occupied": 8,
           "room_count": 10,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-07",
-          "rent_total": 460954.0,
+          "rent_total": 514054.0,
           "expense_total": 23615.0,
           "debt_service": 262264.0,
-          "cashflow": 217479.0,
+          "cashflow": 270579.0,
           "expense_details": {
             "管理委託料": -23065.0,
             "送金事務手数料": -550.0
           },
           "loan_balance": 55784392.0,
-          "occupied": 7,
+          "occupied": 8,
           "room_count": 10,
           "is_forecast": true
         },
         {
           "month": "2026-08",
-          "rent_total": 456351.0,
+          "rent_total": 499724.0,
           "expense_total": 23615.0,
           "debt_service": 262262.0,
-          "cashflow": 212876.0,
+          "cashflow": 256249.0,
           "expense_details": {
             "管理委託料": -23065.0,
             "送金事務手数料": -550.0
           },
           "loan_balance": 55636270.0,
-          "occupied": 7,
+          "occupied": 8,
           "room_count": 10,
           "is_forecast": true
         },
         {
           "month": "2026-09",
-          "rent_total": 460954.0,
+          "rent_total": 514054.0,
           "expense_total": 23615.0,
           "debt_service": 261860.0,
-          "cashflow": 217479.0,
+          "cashflow": 270579.0,
           "expense_details": {
             "管理委託料": -23065.0,
             "送金事務手数料": -550.0
           },
           "loan_balance": 55487927.0,
-          "occupied": 7,
+          "occupied": 8,
           "room_count": 10,
           "is_forecast": true
         }
@@ -1280,11 +1285,11 @@
         "202": {
           "room": "202",
           "items": {
-            "家賃": -20129.0,
-            "共益費": -2516.0,
+            "家賃": 80516.0,
+            "共益費": 10064.0,
             "駐車場": -2516.0,
             "水道料": 2260.0,
-            "ケーブルTV回線料": 1080.0,
+            "ケーブルTV回線料": 2200.0,
             "リフォームパック料": 1593.0
           }
         },
@@ -1302,10 +1307,10 @@
         "301": {
           "room": "301",
           "items": {
-            "家賃": 48000.0,
-            "共益費": 6000.0,
-            "駐車場": 6000.0,
-            "水道料": 2734.0,
+            "家賃": -9600.0,
+            "共益費": -1200.0,
+            "駐車場": -1200.0,
+            "水道料": 2211.0,
             "ケーブルTV回線料": 1100.0,
             "リフォームパック料": 2012.0
           }
@@ -1564,7 +1569,7 @@
         {
           "initial_balance": 62000000.0,
           "rate": 0.036,
-          "current_balance": 56552750.0
+          "current_balance": 56471698.0
         }
       ],
       "occupancy": {
@@ -2581,7 +2586,7 @@
           "loan_balance": 56471698.0,
           "occupied": 10,
           "room_count": 10,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-07",
@@ -2847,7 +2852,7 @@
         {
           "initial_balance": 45000000.0,
           "rate": 0.02775,
-          "current_balance": 35731667.0
+          "current_balance": 35571562.0
         }
       ],
       "occupancy": {
@@ -3929,17 +3934,21 @@
         },
         {
           "month": "2026-06",
-          "rent_total": 546000.0,
-          "expense_total": 28655.0,
+          "rent_total": 606000.0,
+          "expense_total": 157544.0,
           "debt_service": 254229.0,
-          "cashflow": 263116.0,
+          "cashflow": 194227.0,
           "expense_details": {
-            "管理委託料": -28655.0
+            "管理委託料": -31680.0,
+            "敷金返還・入金": -118000.0,
+            "修繕費": -65670.0,
+            "解約違約金": 59000.0,
+            "電気料": -1194.0
           },
           "loan_balance": 35571562.0,
-          "occupied": 9,
+          "occupied": 10,
           "room_count": 10,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-07",
@@ -4006,7 +4015,7 @@
         "105": {
           "room": "105",
           "items": {
-            "家賃": 14000.0
+            "家賃": 60000.0
           }
         },
         "106": {
@@ -4120,25 +4129,25 @@
         {
           "initial_balance": 39000000.0,
           "rate": 0.022,
-          "current_balance": 30860000.0
+          "current_balance": 30712000.0
         },
         {
           "initial_balance": 0,
           "rate": 0.004,
-          "current_balance": 875000.0
+          "current_balance": 850000.0
         }
       ],
       "occupancy": {
-        "occupied": 9,
+        "occupied": 10,
         "total": 10,
-        "rate": 90.0
+        "rate": 100.0
       },
       "monthly": [
         {
           "month": "2021-10",
           "rent_total": 0.0,
           "expense_total": 0.0,
-          "debt_service": 0.0,
+          "debt_service": 0,
           "cashflow": 0.0,
           "expense_details": {},
           "loan_balance": 39000000.0,
@@ -4167,8 +4176,8 @@
           "month": "2021-12",
           "rent_total": 419000.0,
           "expense_total": 31900.0,
-          "debt_service": 220594.0,
-          "cashflow": 166506.0,
+          "debt_service": 0,
+          "cashflow": 450900.0,
           "expense_details": {
             "管理委託料": -24970.0,
             "振込手数料": -330.0,
@@ -4183,8 +4192,8 @@
           "month": "2022-01",
           "rent_total": 379500.0,
           "expense_total": 29535.0,
-          "debt_service": 220318.0,
-          "cashflow": 129647.0,
+          "debt_service": 0.0,
+          "cashflow": 409035.0,
           "expense_details": {
             "管理委託料": -22605.0,
             "振込手数料": -330.0,
@@ -4199,8 +4208,8 @@
           "month": "2022-02",
           "rent_total": 458500.0,
           "expense_total": 34265.0,
-          "debt_service": 266628.0,
-          "cashflow": 211166.0,
+          "debt_service": 53559.0,
+          "cashflow": 546324.0,
           "expense_details": {
             "管理委託料": -27335.0,
             "振込手数料": -330.0,
@@ -4215,8 +4224,8 @@
           "month": "2022-03",
           "rent_total": 378670.0,
           "expense_total": 29488.0,
-          "debt_service": 220422.0,
-          "cashflow": 129417.0,
+          "debt_service": 657.0,
+          "cashflow": 408815.0,
           "expense_details": {
             "管理委託料": -22558.0,
             "振込手数料": -330.0,
@@ -4231,8 +4240,8 @@
           "month": "2022-04",
           "rent_total": 414000.0,
           "expense_total": 31625.0,
-          "debt_service": 217839.0,
-          "cashflow": 165193.0,
+          "debt_service": 657.0,
+          "cashflow": 446282.0,
           "expense_details": {
             "管理委託料": -24695.0,
             "振込手数料": -330.0,
@@ -4247,8 +4256,8 @@
           "month": "2022-05",
           "rent_total": 409340.0,
           "expense_total": 31368.0,
-          "debt_service": 219891.0,
-          "cashflow": 158760.0,
+          "debt_service": 679.0,
+          "cashflow": 441387.0,
           "expense_details": {
             "管理委託料": -24438.0,
             "振込手数料": -330.0,
@@ -4263,8 +4272,8 @@
           "month": "2022-06",
           "rent_total": 409000.0,
           "expense_total": 31350.0,
-          "debt_service": 217304.0,
-          "cashflow": 161003.0,
+          "debt_service": 657.0,
+          "cashflow": 441007.0,
           "expense_details": {
             "管理委託料": -24420.0,
             "振込手数料": -330.0,
@@ -5057,19 +5066,21 @@
         },
         {
           "month": "2026-06",
-          "rent_total": 373500.0,
-          "expense_total": 31597.0,
+          "rent_total": 465500.0,
+          "expense_total": 126279.0,
           "debt_service": 253157.0,
-          "cashflow": 114006.0,
+          "cashflow": 111324.0,
           "expense_details": {
-            "管理委託料": -24667.0,
+            "管理委託料": -27912.0,
             "振込手数料": -330.0,
-            "アパート支援サービス料": -6600.0
+            "アパート支援サービス料": -6600.0,
+            "入居促進費": -44000.0,
+            "修繕費": -47437.0
           },
           "loan_balance": 31562000.0,
-          "occupied": 9,
+          "occupied": 10,
           "room_count": 10,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-07",
@@ -5142,7 +5153,7 @@
         "105": {
           "room": "105",
           "items": {
-            "家賃": 32070.0
+            "家賃": 80000.0
           }
         },
         "106": {
@@ -5260,7 +5271,7 @@
         {
           "initial_balance": 43000000.0,
           "rate": 0.022,
-          "current_balance": 36973717.0
+          "current_balance": 36846427.0
         }
       ],
       "occupancy": {
@@ -5986,18 +5997,18 @@
         },
         {
           "month": "2026-06",
-          "rent_total": 540516.0,
-          "expense_total": 61747.0,
+          "rent_total": 540186.0,
+          "expense_total": 61417.0,
           "debt_service": 222791.0,
           "cashflow": 255978.0,
           "expense_details": {
-            "管理委託料": -42387.0,
+            "管理委託料": -42057.0,
             "ワランティサービス": -19360.0
           },
           "loan_balance": 36846427.0,
           "occupied": 9,
           "room_count": 10,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-07",
@@ -6213,12 +6224,12 @@
         {
           "initial_balance": 28000000.0,
           "rate": 0.018,
-          "current_balance": 20668000.0
+          "current_balance": 20512000.0
         },
         {
           "initial_balance": 6000000.0,
           "rate": 0.018,
-          "current_balance": 4425500.0
+          "current_balance": 4392000.0
         }
       ],
       "occupancy": {
@@ -6965,17 +6976,18 @@
         {
           "month": "2026-06",
           "rent_total": 471000.0,
-          "expense_total": 26455.0,
+          "expense_total": 58355.0,
           "debt_service": 236032.0,
-          "cashflow": 208513.0,
+          "cashflow": 176613.0,
           "expense_details": {
             "管理委託料": -25905.0,
-            "振込手数料": -550.0
+            "振込手数料": -550.0,
+            "修繕費": -31900.0
           },
           "loan_balance": 24904000.0,
           "occupied": 12,
           "room_count": 12,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-07",
@@ -7098,6 +7110,12 @@
         }
       },
       "repairs": [
+        {
+          "date": "2026-06",
+          "room": "B203",
+          "amount": 31900.0,
+          "description": "換気扇交換"
+        },
         {
           "date": "2026-05",
           "room": "A21",
@@ -7301,7 +7319,7 @@
         {
           "initial_balance": 64000000.0,
           "rate": 0.025,
-          "current_balance": 54727914.0
+          "current_balance": 54427296.0
         }
       ],
       "occupancy": {
@@ -7861,20 +7879,21 @@
         },
         {
           "month": "2026-06",
-          "rent_total": 780752.0,
-          "expense_total": 118607.0,
+          "rent_total": 789464.0,
+          "expense_total": 144542.0,
           "debt_service": 444278.0,
-          "cashflow": 217867.0,
+          "cashflow": 200644.0,
           "expense_details": {
             "清掃料": -12100.0,
             "管理委託料": -35314.0,
             "振込手数料": -385.0,
-            "水道光熱費": -70808.0
+            "水道光熱費": -13143.0,
+            "修繕費": -83600.0
           },
           "loan_balance": 54427296.0,
           "occupied": 16,
           "room_count": 16,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-07",
@@ -8091,6 +8110,18 @@
       },
       "repairs": [
         {
+          "date": "2026-06",
+          "room": "T001",
+          "amount": 28600.0,
+          "description": "トイレ漏れ"
+        },
+        {
+          "date": "2026-06",
+          "room": "",
+          "amount": 55000.0,
+          "description": "高圧洗浄"
+        },
+        {
           "date": "2026-04",
           "room": "T001",
           "amount": 31900.0,
@@ -8171,7 +8202,7 @@
         {
           "initial_balance": 9000000.0,
           "rate": 0.02125,
-          "current_balance": 81902123.0
+          "current_balance": 81469667.0
         }
       ],
       "occupancy": {
@@ -8549,21 +8580,22 @@
         },
         {
           "month": "2026-06",
-          "rent_total": 959650.0,
-          "expense_total": 52473.0,
+          "rent_total": 1059900.0,
+          "expense_total": 77622.0,
           "debt_service": 594553.0,
-          "cashflow": 312624.0,
+          "cashflow": 387725.0,
           "expense_details": {
             "Ⅰ-管理委託料": -17162.0,
-            "Ⅱ-管理委託料": -14724.0,
-            "Ⅲ-管理委託料": -23601.0,
-            "水道光熱費": -4186.0,
+            "Ⅱ-管理委託料": -17496.0,
+            "Ⅲ-管理委託料": -23738.0,
+            "修繕費": -22000.0,
+            "水道光熱費": -4426.0,
             "町会費": 7200.0
           },
           "loan_balance": 81469667.0,
-          "occupied": 18,
+          "occupied": 20,
           "room_count": 20,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-07",
@@ -8714,7 +8746,7 @@
         "Ⅲ-102": {
           "room": "Ⅲ-102",
           "items": {
-            "家賃＋共益費": 43748.0
+            "家賃＋共益費": 48200.0
           }
         },
         "Ⅲ-103": {
@@ -8726,7 +8758,7 @@
         "Ⅲ-104": {
           "room": "Ⅲ-104",
           "items": {
-            "家賃＋共益費": 31344.0
+            "家賃＋共益費": 48200.0
           }
         },
         "Ⅲ-201": {
@@ -8762,6 +8794,12 @@
         }
       },
       "repairs": [
+        {
+          "date": "2026-06",
+          "room": "2-101",
+          "amount": 22000.0,
+          "description": "換気扇交換"
+        },
         {
           "date": "2026-05",
           "room": "2-202",
@@ -8825,7 +8863,7 @@
         {
           "initial_balance": 0,
           "rate": 0,
-          "current_balance": 30907886.0
+          "current_balance": 30758525.0
         }
       ],
       "occupancy": {
@@ -9038,7 +9076,7 @@
           "loan_balance": 30758525.0,
           "occupied": 8,
           "room_count": 10,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-07",
@@ -9238,13 +9276,13 @@
         {
           "initial_balance": 72000000.0,
           "rate": 0.0285,
-          "current_balance": 69736635.0
+          "current_balance": 69416387.0
         }
       ],
       "occupancy": {
-        "occupied": 29,
+        "occupied": 28,
         "total": 30,
-        "rate": 96.7
+        "rate": 93.3
       },
       "monthly": [
         {
@@ -9385,28 +9423,30 @@
         },
         {
           "month": "2026-06",
-          "rent_total": 1179500.0,
-          "expense_total": 65939.0,
+          "rent_total": 1164100.0,
+          "expense_total": 239539.0,
           "debt_service": 500377.0,
-          "cashflow": 613184.0,
+          "cashflow": 424184.0,
           "expense_details": {
             "1管理委託料": -16300.0,
-            "2管理委託料": -19700.0,
+            "2管理委託料": -13380.0,
             "3管理委託料": -16399.0,
-            "5管理委託料": -13100.0,
-            "振込手数料": -440.0
+            "5管理委託料": -13200.0,
+            "振込手数料": -440.0,
+            "敷金入金": -96000.0,
+            "修繕費": -83820.0
           },
           "loan_balance": 69416387.0,
           "occupied": 28,
           "room_count": 30,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-07",
-          "rent_total": 1179500.0,
+          "rent_total": 1131500.0,
           "expense_total": 65939.0,
           "debt_service": 500377.0,
-          "cashflow": 613184.0,
+          "cashflow": 565184.0,
           "expense_details": {
             "1管理委託料": -16300.0,
             "2管理委託料": -19700.0,
@@ -9415,16 +9455,16 @@
             "振込手数料": -440.0
           },
           "loan_balance": 69095312.0,
-          "occupied": 28,
+          "occupied": 27,
           "room_count": 30,
           "is_forecast": true
         },
         {
           "month": "2026-08",
-          "rent_total": 1179500.0,
+          "rent_total": 1131500.0,
           "expense_total": 65939.0,
           "debt_service": 500377.0,
-          "cashflow": 613184.0,
+          "cashflow": 565184.0,
           "expense_details": {
             "1管理委託料": -16300.0,
             "2管理委託料": -19700.0,
@@ -9433,16 +9473,16 @@
             "振込手数料": -440.0
           },
           "loan_balance": 68773408.0,
-          "occupied": 28,
+          "occupied": 27,
           "room_count": 30,
           "is_forecast": true
         },
         {
           "month": "2026-09",
-          "rent_total": 1179500.0,
+          "rent_total": 1131500.0,
           "expense_total": 65939.0,
           "debt_service": 500377.0,
-          "cashflow": 613184.0,
+          "cashflow": 565184.0,
           "expense_details": {
             "1管理委託料": -16300.0,
             "2管理委託料": -19700.0,
@@ -9451,7 +9491,7 @@
             "振込手数料": -440.0
           },
           "loan_balance": 68450672.0,
-          "occupied": 28,
+          "occupied": 27,
           "room_count": 30,
           "is_forecast": true
         }
@@ -9526,7 +9566,7 @@
         "2D": {
           "room": "2D",
           "items": {
-            "家賃＋共益費": 40000.0
+            "家賃＋共益費": -15400.0
           }
         },
         "2E": {
@@ -9640,6 +9680,12 @@
       },
       "repairs": [
         {
+          "date": "2026-06",
+          "room": "2C",
+          "amount": 80520.0,
+          "description": "エアコン交換作業と水栓水漏れ"
+        },
+        {
           "date": "2026-05",
           "room": "3-A",
           "amount": 27280.0,
@@ -9649,6 +9695,67 @@
       "images": [
         "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/0922/亀裂部分.jpg",
         "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/0922/外観.jpg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/LDK/エアコン.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/LDK/キッチンパネル.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/LDK/クロス1.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/LDK/クロス2.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/LDK/クロス3.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/LDK/クロス4.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/LDK/床1.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/LDK/床2.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/LDK/床3.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/LDK/手元灯.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/LDK/棚.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/LDK/棚2.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/LDK/流し台.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/LDK/流し台2.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/LDK/流し台3.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/LDK/流し台収納1.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/LDK/流し台収納2.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/LDK/流し台収納3.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/LDK/照明器具.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/トイレ/クロス1.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/トイレ/クロス2.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/トイレ/窓枠.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/和室/クロス1.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/和室/クロス10.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/和室/クロス11.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/和室/クロス2.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/和室/クロス3.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/和室/クロス4.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/和室/クロス5.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/和室/クロス6.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/和室/クロス7.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/和室/クロス8.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/和室/クロス9.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/和室/照明器具.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/和室/畳.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/洋室/カーペット.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/洋室/クロス1.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/洋室/クロス2.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/洋室/クロス3.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/洋室/クロス4.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/洋室/クロス5.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/洋室/クロス6.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/洋室/クロス7.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/洋室/コンセント.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/洋室/照明器具.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/玄関/クロス1.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/玄関/クロス2.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/玄関/クロス3.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/玄関/ポスト.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/玄関/玄関扉.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/脱衣・浴室/クロス1.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/脱衣・浴室/クロス2.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/脱衣・浴室/クロス3.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/脱衣・浴室/シャワーホース.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/脱衣・浴室/シャワーホース2.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/脱衣・浴室/床.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/脱衣・浴室/洗面台下.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/脱衣・浴室/洗面台下2.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/脱衣・浴室/浴室扉枠.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/脱衣・浴室/脱衣所窓枠.jpeg",
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/脱衣・浴室/鏡.jpeg",
         "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/画像/共用部1.jpg",
         "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/画像/共用部10.jpg",
         "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/画像/共用部2.jpg",
@@ -9695,7 +9802,9 @@
         "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/納税通知書（土地,建物2）.png",
         "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/納税通知書（建物2）.png"
       ],
-      "photo_pdfs": []
+      "photo_pdfs": [
+        "02. あっぷるキャピタル/H. 十和田メゾントワダ稲生/修繕/メゾントワダ稲生2-D_現況写真.pdf"
+      ]
     },
     {
       "id": "minamisoma_momo",
@@ -9716,13 +9825,13 @@
         {
           "initial_balance": 56000000.0,
           "rate": 0.0345,
-          "current_balance": 55351562.0
+          "current_balance": 55191042.0
         }
       ],
       "occupancy": {
-        "occupied": 16,
+        "occupied": 15,
         "total": 24,
-        "rate": 66.7
+        "rate": 62.5
       },
       "monthly": [
         {
@@ -9794,17 +9903,17 @@
         },
         {
           "month": "2026-06",
-          "rent_total": 696000.0,
-          "expense_total": 38280.0,
+          "rent_total": 656000.0,
+          "expense_total": 36080.0,
           "debt_service": 323314.0,
-          "cashflow": 334406.0,
+          "cashflow": 296606.0,
           "expense_details": {
-            "管理委託料": -38280.0
+            "管理委託料": -36080.0
           },
           "loan_balance": 55191042.0,
-          "occupied": 16,
+          "occupied": 15,
           "room_count": 24,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-07",
@@ -10021,20 +10130,20 @@
         {
           "initial_balance": 28000000.0,
           "rate": 0.022,
-          "current_balance": 22974448.0
+          "current_balance": 22879128.0
         }
       ],
       "occupancy": {
-        "occupied": 7,
+        "occupied": 6,
         "total": 8,
-        "rate": 87.5
+        "rate": 75.0
       },
       "monthly": [
         {
           "month": "2021-12",
           "rent_total": 0.0,
           "expense_total": 0.0,
-          "debt_service": 0.0,
+          "debt_service": 0,
           "cashflow": 0.0,
           "expense_details": {},
           "loan_balance": 28000000.0,
@@ -10854,18 +10963,18 @@
         },
         {
           "month": "2026-06",
-          "rent_total": 326000.0,
+          "rent_total": 283000.0,
           "expense_total": 26050.0,
           "debt_service": 155627.0,
-          "cashflow": 144323.0,
+          "cashflow": 101323.0,
           "expense_details": {
             "管理委託料": -25500.0,
             "振込手数料": -550.0
           },
           "loan_balance": 22879128.0,
-          "occupied": 7,
+          "occupied": 6,
           "room_count": 8,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-07",
@@ -11068,7 +11177,7 @@
         {
           "initial_balance": 41000000,
           "rate": 0,
-          "current_balance": 40791000.0
+          "current_balance": 40582000.0
         }
       ],
       "occupancy": {
@@ -11111,19 +11220,21 @@
         {
           "month": "2026-06",
           "rent_total": 477000.0,
-          "expense_total": 44699.0,
+          "expense_total": 65188.0,
           "debt_service": 322991.0,
-          "cashflow": 109310.0,
+          "cashflow": 88821.0,
           "expense_details": {
-            "1-管理委託料": -9339.0,
-            "2-管理委託料": -6870.0,
+            "1-管理委託料": -9306.0,
+            "2-管理委託料": -6435.0,
             "敷地外駐車場代": -27500.0,
-            "振込手数料": -990.0
+            "振込手数料": -990.0,
+            "水道光熱費": -3533.0,
+            "JCOM一括利用料": -17424.0
           },
           "loan_balance": 40582000.0,
           "occupied": 14,
           "room_count": 16,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-07",
@@ -11253,7 +11364,7 @@
         "2-201": {
           "room": "2-201",
           "items": {
-            "家賃＋共益費": 46200.0
+            "家賃＋共益費": 33000.0
           }
         },
         "2-202": {
