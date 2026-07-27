@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-15T16:57:38.259175",
+    "generated_at": "2026-07-27T13:32:24.960513",
     "source": "たいせい決算.xlsm",
     "latest_actual_month": "2026-06",
     "months": [
@@ -4128,7 +4128,7 @@
       "loans": [
         {
           "initial_balance": 39000000.0,
-          "rate": 0.022,
+          "rate": 0.0315,
           "current_balance": 30712000.0
         },
         {
@@ -5270,7 +5270,7 @@
       "loans": [
         {
           "initial_balance": 43000000.0,
-          "rate": 0.022,
+          "rate": 0.031,
           "current_balance": 36846427.0
         }
       ],
@@ -6219,7 +6219,7 @@
       "acquired": "2022-07",
       "price": 33000000,
       "units": 12,
-      "lender": "青森銀行古川支店",
+      "lender": "青森みちのく銀行",
       "loans": [
         {
           "initial_balance": 28000000.0,
@@ -7318,7 +7318,7 @@
       "loans": [
         {
           "initial_balance": 64000000.0,
-          "rate": 0.025,
+          "rate": 0.0315,
           "current_balance": 54427296.0
         }
       ],
@@ -8200,8 +8200,8 @@
       "lender": "北日本銀行青森支店",
       "loans": [
         {
-          "initial_balance": 9000000.0,
-          "rate": 0.02125,
+          "initial_balance": 90000000.0,
+          "rate": 0.02625,
           "current_balance": 81469667.0
         }
       ],
@@ -8861,8 +8861,8 @@
       "lender": "あすか信用組合",
       "loans": [
         {
-          "initial_balance": 0,
-          "rate": 0,
+          "initial_balance": 33000000.0,
+          "rate": 0.031,
           "current_balance": 30758525.0
         }
       ],
@@ -9275,7 +9275,7 @@
       "loans": [
         {
           "initial_balance": 72000000.0,
-          "rate": 0.0285,
+          "rate": 0.031,
           "current_balance": 69416387.0
         }
       ],
@@ -9824,8 +9824,8 @@
       "loans": [
         {
           "initial_balance": 56000000.0,
-          "rate": 0.0345,
-          "current_balance": 55191042.0
+          "rate": 0.032,
+          "current_balance": 55179131.0
         }
       ],
       "occupancy": {
@@ -9867,7 +9867,7 @@
           "expense_details": {
             "管理委託料": -43230.0
           },
-          "loan_balance": 55672602.0,
+          "loan_balance": 55670328.0,
           "occupied": 18,
           "room_count": 24,
           "is_forecast": false
@@ -9882,7 +9882,7 @@
             "管理委託料": -41085.0,
             "修繕費": -38885.0
           },
-          "loan_balance": 55512082.0,
+          "loan_balance": 55507066.0,
           "occupied": 18,
           "room_count": 24,
           "is_forecast": false
@@ -9896,7 +9896,7 @@
           "expense_details": {
             "管理委託料": -38280.0
           },
-          "loan_balance": 55351562.0,
+          "loan_balance": 55343334.0,
           "occupied": 16,
           "room_count": 24,
           "is_forecast": false
@@ -9910,7 +9910,7 @@
           "expense_details": {
             "管理委託料": -36080.0
           },
-          "loan_balance": 55191042.0,
+          "loan_balance": 55179131.0,
           "occupied": 15,
           "room_count": 24,
           "is_forecast": false
@@ -9924,7 +9924,7 @@
           "expense_details": {
             "管理委託料": -38280.0
           },
-          "loan_balance": 55030522.0,
+          "loan_balance": 54855817.0,
           "occupied": 16,
           "room_count": 24,
           "is_forecast": true
@@ -9938,7 +9938,7 @@
           "expense_details": {
             "管理委託料": -38280.0
           },
-          "loan_balance": 54870002.0,
+          "loan_balance": 54532503.0,
           "occupied": 16,
           "room_count": 24,
           "is_forecast": true
@@ -9952,7 +9952,7 @@
           "expense_details": {
             "管理委託料": -38280.0
           },
-          "loan_balance": 54709482.0,
+          "loan_balance": 54209189.0,
           "occupied": 16,
           "room_count": 24,
           "is_forecast": true
