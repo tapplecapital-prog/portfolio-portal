@@ -12,7 +12,7 @@
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
   /* guarantee full readability without depending on scroll-triggered reveal */
   html.js .rv{opacity:1!important;transform:none!important;}
-  html.js .wf-bar,html.js .bar-v,html.js .bar-dn,html.js .grow-bar{transform:none!important;}
+  html.js .wf-bar,html.js .bar-v,html.js .bar-dn,html.js .bar-h,html.js .grow-bar{transform:none!important;}
   html.js .grow-draw,html.js .road-draw{stroke-dasharray:none!important;stroke-dashoffset:0!important;}
   html.js .road-area,html.js .road-dot{opacity:1!important;}
   html.js .road-wipe-rect{transform:none!important;}
@@ -181,6 +181,8 @@ html.js .bar-dn{transform:scaleY(0); transform-origin:top; transition:transform 
 html.js .slide.show .bar-dn{transform:scaleY(1);}
 html.js .grow-bar{transform:scaleY(0); transform-origin:bottom; transition:transform .95s cubic-bezier(.22,.61,.36,1); transition-delay:var(--d,0s);}
 html.js .slide.show .grow-bar{transform:scaleY(1);}
+html.js .bar-h{transform:scaleX(0); transform-origin:left center; transition:transform .9s cubic-bezier(.22,.61,.36,1); transition-delay:var(--d,0s);}
+html.js .slide.show .bar-h{transform:scaleX(1);}
 html.js .grow-draw{stroke-dasharray:1700; stroke-dashoffset:1700; transition:stroke-dashoffset 1.6s ease .5s;}
 html.js .slide.show .grow-draw{stroke-dashoffset:0;}
 /* ============ CF cards ============ */
@@ -356,6 +358,169 @@ html.js .slide.show .road-wipe-rect{transform:scaleX(1);}
 .cover .slide-content{position:relative; z-index:2;}
 .cover .scrollcue{z-index:2;}
 @media (max-width:480px){ .cover-collage::after{background:radial-gradient(140% 130% at 50% 42%, transparent 40%, rgba(11,27,59,.24) 100%);} }
+/* ---- s9a: 財務健全性の指標テーブルを列幅内に収める ---- */
+#s9a table.tb{font-size:calc(var(--body-size)*.86); min-width:0;}
+#s9a table.tb th,#s9a table.tb td{white-space:normal; padding:7px 9px; line-height:1.4;}
+#s9a table.tb td:nth-child(2){white-space:nowrap;}
+#s9a table.tb th{font-size:calc(var(--small-size)*.94);}
+#s9a .chart-card svg{max-height:none;}
+@media (max-width:980px){ #s9a table.tb{font-size:calc(var(--body-size)*.92);} }
+/* ---- agenda (contents) ---- */
+.agenda-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(7px,1vw,11px) clamp(12px,2vw,22px);}
+.ag-item{display:grid; grid-template-columns:auto 1fr; gap:12px; align-items:start;
+  padding:clamp(7px,1vw,11px) clamp(10px,1.3vw,16px); border-radius:12px;
+  background:rgba(255,255,255,.58); border:1px solid var(--border-strong);}
+.ag-item .n{font-family:'Inter',sans-serif; font-weight:700; font-size:calc(var(--small-size)*1.02);
+  color:var(--ac-gold); letter-spacing:.06em; padding-top:2px;}
+.ag-item .tt{font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif; font-weight:700;
+  color:var(--ac-navy-900); font-size:calc(var(--body-size)*.97); line-height:1.5;}
+.ag-item .ds{display:block; font-size:calc(var(--small-size)*.94); color:var(--text-muted);
+  font-weight:400; line-height:1.6; margin-top:1px; font-family:'Noto Sans JP',sans-serif;}
+.ag-item.mark{background:linear-gradient(120deg,rgba(36,60,144,.09),rgba(84,168,60,.09)); border-color:rgba(24,84,156,.24);}
+.ag-item.mark .n{color:var(--ac-blue);}
+/* ---- strength / issue flags ---- */
+.flag{display:inline-block; font-size:calc(var(--small-size)*.9); font-weight:700; letter-spacing:.08em;
+  padding:2px 11px; border-radius:99px; margin-bottom:8px;}
+.flag.good{background:rgba(84,168,60,.15); color:var(--ac-green-deep);}
+.flag.watch{background:rgba(192,57,43,.10); color:var(--ac-neg);}
+.flag.base{background:rgba(24,84,156,.10); color:var(--ac-blue);}
+/* ---- disclosure notes ---- */
+.notes-grid{display:grid; gap:clamp(10px,1.8vh,16px);}
+.notes-grid .card h3{margin-bottom:6px;}
+.notes-grid .card p{font-size:calc(var(--small-size)*1.06); line-height:1.9; color:var(--text-muted);}
+.notes-grid .card p b{color:var(--ac-navy-800);}
+@media (max-width:980px){ .agenda-grid{grid-template-columns:1fr;} }
+/* ---- s9b: 金利上昇の影響 ---- */
+.rate-legend{display:grid; gap:7px; margin-top:10px;}
+.rate-legend .rl{display:grid; grid-template-columns:24px 1fr; gap:10px; align-items:start;
+  font-size:calc(var(--small-size)*.98); line-height:1.55;}
+.rate-legend .rl i{width:24px; height:3px; border-radius:2px; margin-top:8px; display:block;}
+.rate-legend .rl b{color:var(--ac-navy-900); font-weight:700;}
+.rate-legend .rl .v{font-family:'Inter','Noto Sans JP',sans-serif; font-variant-numeric:tabular-nums; color:var(--text-muted);}
+.rate-steps{display:grid; gap:7px; font-size:calc(var(--small-size)*1.0); line-height:1.7;}
+.rate-steps .rs{display:grid; grid-template-columns:auto 1fr; gap:10px; align-items:baseline;}
+.rate-steps .rs .nm{font-weight:700; color:var(--ac-navy-800); white-space:nowrap;}
+.rate-steps .rs .fl{color:var(--text-muted); font-family:'Inter','Noto Sans JP',sans-serif; font-variant-numeric:tabular-nums;}
+.rate-steps .rs .fl b{color:var(--ac-navy-900);}
+.rate-chips{display:flex; flex-wrap:wrap; gap:6px; margin-top:6px;}
+.rate-chips span{font-family:'Inter','Noto Sans JP',sans-serif; font-variant-numeric:tabular-nums;
+  font-size:calc(var(--small-size)*.94); font-weight:700; color:var(--ac-navy-800);
+  background:rgba(24,84,156,.09); border:1px solid var(--border-strong); border-radius:99px; padding:2px 10px; white-space:nowrap;}
+@media (max-width:980px){ .rate-steps .rs{grid-template-columns:1fr; gap:0;} }
+/* ---- s9c / s9d: 事業等のリスク ---- */
+#s9c table.tb{font-size:calc(var(--body-size)*.88); min-width:620px;}
+#s9c table.tb th,#s9c table.tb td{white-space:normal; padding:7px 11px; line-height:1.55; text-align:left;}
+#s9c table.tb td:first-child{text-align:center; width:32px; font-family:'Inter',sans-serif; font-weight:700; color:var(--ac-gold);}
+#s9c table.tb th:first-child{text-align:center;}
+#s9c table.tb td:nth-child(2){width:31%; font-weight:700; color:var(--ac-navy-800); font-family:'Noto Sans JP',sans-serif;}
+#s9c table.tb td:nth-child(3){font-family:'Inter','Noto Sans JP',sans-serif; font-variant-numeric:tabular-nums; color:var(--text-muted);}
+.badge-detail{display:inline-block; font-family:'Noto Sans JP',sans-serif; font-size:calc(var(--small-size)*.82);
+  font-weight:700; padding:1px 8px; border-radius:99px; background:rgba(24,84,156,.14); color:var(--ac-blue);
+  margin-left:6px; white-space:nowrap; letter-spacing:.02em;}
+.risk-list{display:grid; gap:clamp(10px,1.6vh,16px); margin-top:clamp(12px,2.2vh,20px);}
+.risk-list>.card+.card{margin-top:0;}
+.risk-head{display:flex; gap:12px; align-items:baseline; margin-bottom:10px; padding-bottom:8px;
+  border-bottom:1px solid var(--border-strong);}
+.risk-head .rn{flex:0 0 auto; font-family:'Inter',sans-serif; font-weight:800; color:var(--ac-gold);
+  font-variant-numeric:tabular-nums; font-size:calc(var(--body-size)*1.02);}
+.risk-head h3{margin-bottom:0;}
+.risk-3{display:grid; grid-template-columns:1fr 1fr 1.06fr; gap:clamp(12px,1.7vw,24px); align-items:start;}
+.risk-3>*{min-width:0;}
+.seg-label{display:block; font-size:calc(var(--small-size)*.86); font-weight:700; letter-spacing:.12em;
+  color:var(--ac-blue); margin-bottom:5px;}
+.seg-body{font-size:calc(var(--small-size)*1.0); line-height:1.72; color:var(--text-muted);}
+.seg-body b{color:var(--ac-navy-800); font-weight:700;}
+.act{border-radius:10px; padding:8px 12px; font-size:calc(var(--small-size)*.98); line-height:1.68; color:var(--text-muted);}
+.act+.act{margin-top:8px;}
+.act .at{display:block; font-weight:700; font-size:calc(var(--small-size)*.9); letter-spacing:.06em; margin-bottom:2px;}
+.act.done{background:rgba(84,168,60,.12); border:1px solid rgba(84,168,60,.30);}
+.act.done .at{color:var(--ac-green-deep);}
+.act.todo{background:rgba(176,141,46,.13); border:1px solid rgba(176,141,46,.34);}
+.act.todo .at{color:#8a6d1e;}
+@media (max-width:980px){ .risk-3{grid-template-columns:1fr;} }
+/* ---- 左寄せ定義表（会社概要ほか） ---- */
+table.tb.lefty{min-width:0;}
+table.tb.lefty th,table.tb.lefty td{text-align:left; white-space:normal; line-height:1.7;
+  font-family:'Noto Sans JP',sans-serif; padding:8px 13px;}
+table.tb.lefty td:first-child{width:24%; min-width:7.4em; font-weight:700; color:var(--ac-navy-800);}
+table.tb.lefty .num{font-family:'Inter','Noto Sans JP',sans-serif; font-variant-numeric:tabular-nums;}
+/* ---- s2a: 6期の推移表（列が多い。横スクロール可の枠の中だけを広げる） ---- */
+#s2a .tb-wrap:not(.noscroll) table.tb{font-size:calc(var(--body-size)*.84); min-width:720px;}
+#s2a table.tb th,#s2a table.tb td{padding:7px 9px;}
+#s2a table.tb th{white-space:normal; line-height:1.3;}
+/* ---- s5a: 棟別の償却明細（列が多い。横スクロール可の枠の中だけを広げる） ---- */
+#s5a .tb-wrap:not(.noscroll) table.tb{font-size:calc(var(--body-size)*.82); min-width:760px;}
+#s5a table.tb th,#s5a table.tb td{padding:6px 8px;}
+#s5a table.tb th{white-space:normal; line-height:1.3;}
+#s5a .tb-wrap.noscroll table.tb{font-size:calc(var(--body-size)*.86); min-width:0;}
+#s5a .tb-wrap.noscroll table.tb th{font-size:calc(var(--small-size)*.9);}
+/* ---- 事業の全体像（循環図） ---- */
+.bm{display:grid; grid-template-columns:1fr .84fr 1.06fr .84fr 1fr;
+  gap:clamp(7px,1vw,14px); align-items:center;}
+.bm>*, .bm-col>*, .bm-flows>*{min-width:0;}
+.bm-actor .amt,.bm-flow .amt,.bm-hub .amt{overflow-wrap:anywhere;}
+.bm-col{display:grid; gap:clamp(8px,1.5vh,14px); align-content:center;}
+.bm-actor{padding:clamp(9px,1.2vw,15px); border-radius:14px; background:rgba(255,255,255,.66);
+  border:1px solid var(--border-strong);}
+.bm-actor .rl2{display:block; font-size:calc(var(--small-size)*.82); font-weight:700;
+  letter-spacing:.12em; color:var(--ac-blue); margin-bottom:2px;}
+.bm-actor .nm{font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif; font-weight:700;
+  color:var(--ac-navy-900); font-size:calc(var(--body-size)*.96); line-height:1.45;}
+.bm-actor .ds{display:block; font-size:calc(var(--small-size)*.9); color:var(--text-muted);
+  line-height:1.62; margin-top:3px;}
+.bm-actor .amt{display:block; margin-top:4px; font-family:'Inter','Noto Sans JP',sans-serif;
+  font-variant-numeric:tabular-nums; font-weight:700; color:var(--ac-navy-800);
+  font-size:calc(var(--small-size)*.98);}
+.bm-hub{padding:clamp(13px,1.7vw,22px) clamp(10px,1.3vw,18px); border-radius:16px;
+  background:var(--ac-gradient); color:#fff; text-align:center; box-shadow:var(--shadow-lg);}
+.bm-hub .nm{font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif; font-weight:900;
+  font-size:calc(var(--body-size)*1.1); line-height:1.4;}
+.bm-hub .ds{display:block; font-size:calc(var(--small-size)*.92); color:rgba(255,255,255,.86);
+  margin-top:6px; line-height:1.6;}
+.bm-hub .amt{display:block; margin-top:8px; font-family:'Inter','Noto Sans JP',sans-serif;
+  font-variant-numeric:tabular-nums; font-weight:800; color:#fff; font-size:calc(var(--small-size)*1.06);}
+.bm-flows{display:grid; gap:clamp(6px,1vh,10px); align-content:center;}
+.bm-flow{padding:6px 10px; border-radius:10px; background:rgba(24,84,156,.07);
+  border:1px solid var(--border-strong);}
+.bm-flow .hd{display:flex; align-items:center; gap:6px; font-size:calc(var(--small-size)*.94);
+  font-weight:700; color:var(--ac-navy-800); line-height:1.4;}
+.bm-flow .n{flex:0 0 auto; width:19px; height:19px; border-radius:50%; background:var(--ac-gold);
+  color:#fff; display:flex; align-items:center; justify-content:center;
+  font-family:'Inter',sans-serif; font-weight:700; font-size:.66rem;}
+.bm-flow .amt{display:block; font-family:'Inter','Noto Sans JP',sans-serif;
+  font-variant-numeric:tabular-nums; font-size:calc(var(--small-size)*.9);
+  color:var(--text-muted); margin-top:2px; line-height:1.5;}
+.bm-flow .dir{display:inline-block; font-weight:800; color:var(--ac-blue); margin-left:2px;}
+.bm-loop{display:grid; grid-template-columns:auto 1fr auto; gap:clamp(9px,1.4vw,16px);
+  align-items:center; margin-top:clamp(10px,1.8vh,16px);
+  padding:clamp(10px,1.4vw,18px) clamp(12px,1.6vw,22px); border-radius:14px;
+  background:linear-gradient(110deg,rgba(36,60,144,.13),rgba(84,168,60,.13));
+  border:3px solid rgba(24,84,156,.34);}
+.bm-loop .n{width:32px; height:32px; border-radius:50%; background:var(--ac-navy-900); color:#fff;
+  display:flex; align-items:center; justify-content:center; font-family:'Inter',sans-serif;
+  font-weight:700; font-size:.9rem;}
+.bm-loop b{color:var(--ac-navy-900); font-size:calc(var(--body-size)*1.0);}
+.bm-loop .ds{display:block; font-size:calc(var(--small-size)*.96); color:var(--text-muted);
+  margin-top:3px; line-height:1.65;}
+.bm-loop .dir{font-size:1.5rem; color:var(--ac-blue); font-weight:800;}
+@media (max-width:980px){
+  .bm{grid-template-columns:1fr;}
+  .bm-flow .dir{display:inline-block; transform:rotate(90deg);}
+  .bm-loop{grid-template-columns:auto 1fr;}
+  .bm-loop .dir{display:none;}
+}
+/* ---- 確定値／推定値の区分バッジ ---- */
+.tag-cert{display:inline-block; font-size:calc(var(--small-size)*.84); font-weight:700;
+  letter-spacing:.06em; padding:1px 9px; border-radius:99px; margin-left:6px; white-space:nowrap;}
+.tag-cert.fix{background:rgba(84,168,60,.16); color:var(--ac-green-deep);}
+.tag-cert.est{background:rgba(176,141,46,.16); color:#8a6d1e;}
+/* ---- 後発事象 ---- */
+#s12a table.tb.lefty td:nth-child(2){white-space:nowrap; font-weight:700; color:var(--ac-green-deep);}
+.se-hero{padding:clamp(16px,2.4vw,30px) clamp(16px,2.2vw,28px); border-radius:var(--radius);
+  background:linear-gradient(115deg,rgba(84,168,60,.14),rgba(24,84,156,.10));
+  border:1px solid rgba(84,168,60,.32);}
+.se-hero .big{font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif; font-weight:900;
+  font-size:clamp(1.3rem,3.2vw,2.2rem); color:var(--ac-navy-900); line-height:1.35;}
 :focus-visible{outline:3px solid var(--ac-blue); outline-offset:2px;}
 </style>
 </head>
@@ -368,7 +533,7 @@ html.js .slide.show .road-wipe-rect{transform:scaleX(1);}
   <span class="t2">第6期 2026年6月期 決算説明資料</span>
 </header>
 <nav class="dots" id="dots" aria-label="セクション移動"></nav>
-<div class="pagenum num" id="pagenum">1 / 11</div>
+<div class="pagenum num" id="pagenum">1 / 25</div>
 
 <main id="deck">
 
@@ -398,10 +563,179 @@ html.js .slide.show .road-wipe-rect{transform:scaleX(1);}
   <div class="scrollcue" aria-hidden="true">SCROLL ▾</div>
 </section>
 
-<!-- 2. 成長の歩み -->
+<!-- 2. 目次 -->
+<section class="slide" id="s1a" aria-label="目次">
+  <div class="slide-content">
+    <p class="kicker rv"><span class="no">00</span> CONTENTS</p>
+    <h2 class="rv" style="--d:.05s">目次</h2>
+    <p class="lead rv" style="--d:.08s">本資料は全25ページで構成する。会社概要と事業の全体像に続き、第6期（2026年6月期）の実績を財務三表と物件別の内訳で示し、稼働率・NOI（運営純収益）・減価償却の逓減見通し・財務健全性・金利上昇の影響・事業等のリスク・来期見込み・長期ロードマップ・後発事象までを順に説明する。</p>
+    <div class="card rv" style="--d:.12s; margin-top:clamp(12px,2.2vh,20px)">
+      <div class="agenda-grid">
+        <div class="ag-item rv" style="--d:0.10s"><span class="n num">01</span><span class="tt">会社概要<span class="ds">商号・設立・本店・代表者・資本金・決算期・事業内容・取引金融機関</span></span></div>
+        <div class="ag-item mark rv" style="--d:0.12s"><span class="n num">02</span><span class="tt">事業の全体像<span class="ds">取得・委託・家賃・返済・再投資の循環と、第6期の実績金額</span></span></div>
+        <div class="ag-item rv" style="--d:0.14s"><span class="n num">03</span><span class="tt">成長の歩み<span class="ds">6年間の総資産（簿価ベース）・借入残高・家賃収入・EBITDAの推移</span></span></div>
+        <div class="ag-item rv" style="--d:0.16s"><span class="n num">04</span><span class="tt">主要な経営指標等の推移<span class="ds">2021年6月期から2026年6月期までの6期分の損益・財政状態・事業規模</span></span></div>
+        <div class="ag-item rv" style="--d:0.18s"><span class="n num">05</span><span class="tt">当期の全体像<span class="ds">売上高・総資産・EBITDA・保有棟数と、拡大投資の内容</span></span></div>
+        <div class="ag-item rv" style="--d:0.20s"><span class="n num">06</span><span class="tt">当期の主な出来事<span class="ds">3物件の取得と、新たな調達チャネルの開拓</span></span></div>
+        <div class="ag-item rv" style="--d:0.22s"><span class="n num">07</span><span class="tt">損益計算書<span class="ds">前期比較と、EBITDAで見る本業のキャッシュ創出力</span></span></div>
+        <div class="ag-item mark rv" style="--d:0.24s"><span class="n num">08</span><span class="tt">減価償却の逓減見通し<span class="ds">棟別の償却明細と、経常損益が黒字に転じる時期</span></span></div>
+        <div class="ag-item rv" style="--d:0.26s"><span class="n num">09</span><span class="tt">貸借対照表<span class="ds">資産・負債・純資産の前期比較</span></span></div>
+        <div class="ag-item mark rv" style="--d:0.28s"><span class="n num">10</span><span class="tt">財務内容の実質<span class="ds">債務超過の状況と、実質純資産への橋渡し</span></span></div>
+        <div class="ag-item rv" style="--d:0.30s"><span class="n num">11</span><span class="tt">キャッシュ・フロー<span class="ds">営業・投資・財務の3区分と現預金残高の一致確認</span></span></div>
+        <div class="ag-item rv" style="--d:0.32s"><span class="n num">12</span><span class="tt">当期取得の3物件<span class="ds">取得日・借入先・借入条件・当期売上高</span></span></div>
+        <div class="ag-item rv" style="--d:0.34s"><span class="n num">13</span><span class="tt">保有9物件の一覧<span class="ds">物件別の売上高・期末借入残高・借入先</span></span></div>
+        <div class="ag-item mark rv" style="--d:0.36s"><span class="n num">14</span><span class="tt">稼働率<span class="ds">期末・期中平均・賃料ベースの稼働率と、物件別の内訳</span></span></div>
+        <div class="ag-item mark rv" style="--d:0.38s"><span class="n num">15</span><span class="tt">NOI（運営純収益）<span class="ds">賃料収入から運営費用を控除した純収益と、NOI利回り</span></span></div>
+        <div class="ag-item mark rv" style="--d:0.40s"><span class="n num">16</span><span class="tt">財務健全性<span class="ds">LTV・DSCR・債務償還年数・平均調達金利・手元流動性</span></span></div>
+        <div class="ag-item mark rv" style="--d:0.42s"><span class="n num">17</span><span class="tt">金利上昇の影響<span class="ds">借入ごとの金利改定の履歴と、DSCRの感応度の試算</span></span></div>
+        <div class="ag-item mark rv" style="--d:0.44s"><span class="n num">18</span><span class="tt">事業等のリスク — リスクの一覧<span class="ds">主要なリスク11項目と、現状を示す主な数値</span></span></div>
+        <div class="ag-item mark rv" style="--d:0.46s"><span class="n num">19</span><span class="tt">事業等のリスク — 主要なリスクの詳細<span class="ds">重要度の高い5項目をリスクの内容・当社の現状・対応方針の3段で</span></span></div>
+        <div class="ag-item rv" style="--d:0.48s"><span class="n num">20</span><span class="tt">3期推移と来期見込み<span class="ds">2027年6月期を新規取得の有無の2通りで比較</span></span></div>
+        <div class="ag-item rv" style="--d:0.50s"><span class="n num">21</span><span class="tt">ビジョンと長期ロードマップ<span class="ds">2042年までの取得資産・満室想定家賃の成長経路</span></span></div>
+        <div class="ag-item mark rv" style="--d:0.52s"><span class="n num">22</span><span class="tt">後発事象<span class="ds">決算日後から本資料の作成日までに確認した事象と、確認した範囲</span></span></div>
+        <div class="ag-item rv" style="--d:0.54s"><span class="n num">23</span><span class="tt">注記<span class="ds">本資料の作成前提、将来に関する記述、セグメント情報の取扱い</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. 会社概要 -->
+<section class="slide" id="s1b" aria-label="会社概要">
+  <div class="slide-content">
+    <p class="kicker rv"><span class="no">01</span> COMPANY PROFILE</p>
+    <h2 class="rv" style="--d:.05s">会社概要</h2>
+    <div class="cols wide" style="margin-top:clamp(8px,1.6vh,14px)">
+      <div class="card rv" style="--d:.12s">
+        <div class="tb-wrap noscroll"><table class="tb lefty">
+          <tbody>
+            <tr><td>商号</td><td>合同会社あっぷるキャピタル</td></tr>
+            <tr><td>設立</td><td class="num">2020年（令和2年）12月21日</td></tr>
+            <tr><td>本店所在地</td><td>東京都港区港南四丁目2番7-4020号</td></tr>
+            <tr><td>支店</td><td>青森市古川三丁目13番15号（青森支店）</td></tr>
+            <tr><td>代表者</td><td>代表社員　三上　浩平</td></tr>
+            <tr class="hl"><td>資本金</td><td class="num">10,000円</td></tr>
+            <tr><td>決算期</td><td>6月30日（事業年度＝毎年7月1日〜翌年6月30日）</td></tr>
+            <tr><td>事業内容</td><td>賃貸用不動産の保有・賃貸（不動産賃貸業の単一セグメント）</td></tr>
+            <tr><td>役員・従業員</td><td>役員1名（代表社員）・従業員なし</td></tr>
+            <tr><td>取引金融機関</td><td>あすか信用組合／北日本銀行／芝信用金庫／青森みちのく銀行</td></tr>
+            <tr><td>グループ</td><td>合同会社たいせい、および代表者個人保有分と併せてグループを構成する</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div>
+        <div class="card rv" style="--d:.22s">
+          <h3>当期末の事業規模</h3>
+          <div class="bridge">
+            <div class="bi"><span>保有物件</span><span class="amt">9棟154戸</span></div>
+            <div class="bi"><span>所在</span><span class="amt">1都1道4県 9市町</span></div>
+            <div class="bi"><span>売上高（賃料等）</span><span class="amt">55,605,329円</span></div>
+            <div class="bi sum"><span>総資産</span><span class="amt">481,871,694円</span></div>
+          </div>
+        </div>
+        <div class="card rv" style="--d:.32s">
+          <span class="flag base">組織</span>
+          <p style="font-size:calc(var(--small-size)*1.04)">物件の日常運営は物件ごとに管理会社へ外部委託しており、<b>当社は取得判断・資金調達・会計を担う</b>。この分業により、役員1名・従業員なしの体制で9棟154戸を運営している。</p>
+        </div>
+      </div>
+    </div>
+    <p class="note rv" style="--d:.42s"><b>資本金について：</b>10,000円は、履歴事項全部証明書（登記簿）・法人設立届出書・freee会計の試算表の3つの資料で一致している。また社員資本等変動計算書の繰越利益剰余金 期末残高△30,708,599円と、貸借対照表（本資料11ページ）に記載した「資本金・繰越利益剰余金 △30,698,599円」との差額がちょうど10,000円であり、この点でも整合している。</p>
+    <p class="note rv" style="--d:.46s"><b>従業員数の記載について：</b>本表の「役員1名・従業員なし」は法人事業概況説明書の期末従事員の状況による。一方、法人税申告書の「売上高等の事業所別内訳書」および事業税の分割明細では、本店1名・青森支店1名の計2名として計上している。これは同一人物（代表社員）を事業所ごとに1名ずつ計上したものである。</p>
+  </div>
+</section>
+
+<!-- 4. 事業の全体像 -->
+<section class="slide" id="s1c" aria-label="事業の全体像">
+  <div class="slide-content">
+    <p class="kicker rv"><span class="no">02</span> BUSINESS MODEL</p>
+    <h2 class="rv" style="--d:.05s">事業の全体像 — 取得・委託・家賃・返済・再投資の循環</h2>
+    <p class="lead rv" style="--d:.08s">当社の事業は、①金融機関からの借入と自己資金で物件を取得し、②運営を管理会社へ委託し、③家賃を受け取り、④元利返済と修繕を行い、⑤残ったキャッシュを次の取得の頭金に充てる、という循環で構成される。図中の金額はすべて第6期（2025年7月1日〜2026年6月30日）の実績である。</p>
+    <div class="card rv" style="--d:.14s; margin-top:clamp(8px,1.6vh,14px)">
+      <div class="bm">
+        <div class="bm-col">
+          <div class="bm-actor rv" style="--d:.18s">
+            <span class="rl2">資金の出し手</span>
+            <span class="nm">金融機関 4行</span>
+            <span class="ds">あすか信用組合・北日本銀行・青森みちのく銀行・芝信用金庫。物件ごとに長期借入を組む。</span>
+            <span class="amt">期末 金融機関借入 447,592,724円</span>
+          </div>
+          <div class="bm-actor rv" style="--d:.22s">
+            <span class="rl2">資金の出し手</span>
+            <span class="nm">グループ会社・代表者</span>
+            <span class="ds">手付金・つなぎ資金を供給する。返済順位が後位で、実質自己資金に近い性格をもつ。</span>
+            <span class="amt">関係会社借入 34,100,000円／役員借入 25,274,300円</span>
+          </div>
+        </div>
+        <div class="bm-flows">
+          <div class="bm-flow rv" style="--d:.26s">
+            <span class="hd"><span class="n">1</span>調達<span class="dir">→</span></span>
+            <span class="amt">財務活動による純調達 199,156,824円</span>
+          </div>
+          <div class="bm-flow rv" style="--d:.30s">
+            <span class="hd"><span class="dir">←</span><span class="n">4</span>元利返済</span>
+            <span class="amt">28,910,094円（元本 19,513,528＋利息 9,396,566）</span>
+          </div>
+        </div>
+        <div class="bm-hub rv" style="--d:.16s">
+          <span class="nm">合同会社<br>あっぷるキャピタル</span>
+          <span class="ds">取得判断・資金調達・会計<br>役員1名・従業員なし</span>
+          <span class="amt">総資産 481,871,694円<br>EBITDA 41,727,520円</span>
+        </div>
+        <div class="bm-flows">
+          <div class="bm-flow rv" style="--d:.28s">
+            <span class="hd"><span class="n">1</span>投資（取得）<span class="dir">→</span></span>
+            <span class="amt">231,822,000円（当期3棟：建物135,840,867＋土地95,961,133）</span>
+          </div>
+          <div class="bm-flow rv" style="--d:.32s">
+            <span class="hd"><span class="n">2</span>管理委託<span class="dir">→</span></span>
+            <span class="amt">9棟154戸をすべて外部委託</span>
+          </div>
+          <div class="bm-flow rv" style="--d:.36s">
+            <span class="hd"><span class="n">4</span>運営費用<span class="dir">→</span></span>
+            <span class="amt">12,499,012円（管理委託料・修繕費・固定資産税・保険料等）</span>
+          </div>
+          <div class="bm-flow rv" style="--d:.40s">
+            <span class="hd"><span class="dir">←</span><span class="n">3</span>家賃</span>
+            <span class="amt">賃料等 55,605,329円（前期 34,662,696円／+60.4%）</span>
+          </div>
+        </div>
+        <div class="bm-col">
+          <div class="bm-actor rv" style="--d:.20s">
+            <span class="rl2">物件の供給元</span>
+            <span class="nm">売主・仲介</span>
+            <span class="ds">表面利回り13%以上の地方の築古アパートを継続して取得する。</span>
+            <span class="amt">当期取得 3棟（十和田・南相馬・東松山）</span>
+          </div>
+          <div class="bm-actor rv" style="--d:.24s">
+            <span class="rl2">運営の担い手</span>
+            <span class="nm">管理会社（物件ごと）</span>
+            <span class="ds">募集・入居管理・原状回復・小修繕を担う。当社は現場人員を持たない。</span>
+            <span class="amt">9棟すべてを外部委託</span>
+          </div>
+          <div class="bm-actor rv" style="--d:.28s">
+            <span class="rl2">収入の源泉</span>
+            <span class="nm">入居者（154戸）</span>
+            <span class="ds">家賃は管理会社を経由して当社へ入金される。当社は入居者と直接の接点を持たない。</span>
+            <span class="amt">期末稼働率 90.3%（139戸／154戸）</span>
+          </div>
+        </div>
+      </div>
+      <div class="bm-loop rv" style="--d:.44s">
+        <span class="n num">5</span>
+        <div>
+          <b>再投資 — 残ったキャッシュを次の取得の頭金へ（この循環の中心）</b>
+          <span class="ds">営業キャッシュ・フロー <b>＋28,503,943円</b>。<b>当期の投資231.8百万円は、借入等による調達199.2百万円を32.6百万円上回っており、その差額を営業キャッシュ・フローの黒字（＋28.5百万円）と手元資金の取崩し（△4.2百万円）で埋めている。</b>すなわちこの循環は借入だけで回っているのではなく、本業が生み出したキャッシュが組み込まれている。</span>
+        </div>
+        <span class="dir" aria-hidden="true">↺</span>
+      </div>
+    </div>
+    <p class="note rv" style="--d:.5s">図中のEBITDA 41,727,520円は「営業損益＋減価償却費」で、賃料収入から現金支出を伴う運営費用を差し引いた本業のキャッシュ創出力を示す。運営費用12,499,012円は、販売費及び一般管理費59,096,954円から非資金費用（減価償却費45,219,145円・長期前払費用償却1,378,797円）を除いた金額である。当期純損失△18,475,778円は減価償却費が主因であり、営業キャッシュ・フローは＋28,503,943円の黒字である。</p>
+  </div>
+</section>
+
+<!-- 5. 成長の歩み -->
 <section class="slide" id="s2" aria-label="成長の歩み">
   <div class="slide-content">
-    <p class="kicker rv"><span class="no">01</span> SIX-YEAR GROWTH</p>
+    <p class="kicker rv"><span class="no">03</span> SIX-YEAR GROWTH</p>
     <h2 class="rv" style="--d:.05s">成長の歩み — 6年で総資産は約20倍へ</h2>
     <div class="card chart-card rv" style="--d:.12s">
       <svg viewBox="0 0 1020 500" role="img" aria-label="2021年6月期から2027年6月期までの成長推移。総資産は24.6百万円から481.9百万円へ、家賃収入は0.4百万円から55.6百万円へ拡大。EBITDAは黒字転換後7期連続で拡大し2026年6月期41.7百万円。">
@@ -426,7 +760,7 @@ html.js .slide.show .road-wipe-rect{transform:scaleX(1);}
 <text x="994" y="244.7" font-size="11" fill="#B08D2E" text-anchor="start" font-family="Inter,sans-serif">40</text>
 <text x="994" y="171.1" font-size="11" fill="#B08D2E" text-anchor="start" font-family="Inter,sans-serif">60</text>
 <text x="994" y="97.5" font-size="11" fill="#B08D2E" text-anchor="start" font-family="Inter,sans-serif">80</text>
-<text x="62" y="26" font-size="11" fill="#54749B" text-anchor="start" font-family="'Noto Sans JP',sans-serif">左軸：総資産・借入（百万円）</text>
+<text x="62" y="26" font-size="11" fill="#54749B" text-anchor="start" font-family="'Noto Sans JP',sans-serif">左軸：総資産（簿価ベース）・借入（百万円）</text>
 <text x="1018" y="26" font-size="11" fill="#B08D2E" text-anchor="end" font-family="'Noto Sans JP',sans-serif">右軸：家賃・EBITDA（百万円）</text>
 <rect class="grow-bar" style="--d:0.15s" x="130.9" y="372.7" width="26" height="15.3" rx="4" fill="url(#gAsset)"/>
 <text x="143.9" y="366.7" font-size="11" font-weight="700" fill="#0B1B3B" text-anchor="middle" font-family="Inter,sans-serif">25</text>
@@ -493,7 +827,7 @@ html.js .slide.show .road-wipe-rect{transform:scaleX(1);}
     </div>
     <div class="kpi-grid" style="margin-top:16px">
       <div class="card kpi rv" style="--d:.16s">
-        <div class="label">総資産（2021→2026）</div>
+        <div class="label">総資産（簿価ベース・2021→2026）</div>
         <div class="value">約<span data-count="20">20</span><span class="unit">倍</span></div>
         <div class="delta pos">24.6百万円 → 481.9百万円</div>
       </div>
@@ -513,14 +847,52 @@ html.js .slide.show .road-wipe-rect{transform:scaleX(1);}
         <div class="delta pos">6年で+8棟を積み上げ</div>
       </div>
     </div>
-    <p class="note rv" style="--d:.46s">総資産・借入残高・家賃収入・EBITDAはいずれも右肩上がりで拡大。EBITDAは事業が生み出す本業のキャッシュ創出力の目安（営業損益＋減価償却費）で、2021年6月期の赤字から黒字に転じて以降、7期連続で拡大している。<b>家賃収入は、保有が1ヶ月強にとどまった2021年6月期を除き、2022年6月期を1.0倍として倍率で表示（金色の×印：2026年 約7.2倍、2027年6月期見込 約10.3倍）。</b>2027年6月期は新規取得を含む見込み値（破線）で、総資産479百万円・借入467百万円・家賃80百万円・EBITDA62百万円を見込む。軸ラベルは各決算期。</p>
+    <p class="note rv" style="--d:.46s">総資産・借入残高・家賃収入・EBITDAはいずれも右肩上がりで拡大。EBITDAは事業が生み出す本業のキャッシュ創出力の目安（営業損益＋減価償却費）で、2021年6月期の赤字から黒字に転じて以降、7期連続で拡大している。<b>家賃収入は、保有が1ヶ月強にとどまった2021年6月期を除き、2022年6月期を1.0倍として倍率で表示（金色の×印：2026年 約7.2倍、2027年6月期見込 約10.3倍）。</b>2027年6月期は新規取得を含む見込み値（破線）で、総資産479百万円・借入467百万円・家賃80百万円・EBITDA62百万円を見込む。軸ラベルは各決算期。<b>総資産は簿価ベース。</b>2021年6月期は最初の1棟を取得した期で保有期間が1ヶ月強のため、倍率は起点の水準に影響を受ける。取得資産ベースとの関係は、簿価481.9百万円＋累計減価償却116.0百万円＝取得ベース約597.9百万円。</p>
   </div>
 </section>
 
-<!-- 3. 2026年度のブレイクダウン -->
+<!-- 6. 主要な経営指標等の推移 -->
+<section class="slide" id="s2a" aria-label="主要な経営指標等の推移">
+  <div class="slide-content">
+    <p class="kicker rv"><span class="no">04</span> SIX-YEAR KEY FIGURES</p>
+    <h2 class="rv" style="--d:.05s">主要な経営指標等の推移（6期分）</h2>
+    <div class="card rv" style="--d:.12s">
+      <div class="tb-wrap"><table class="tb">
+        <thead><tr><th>項目（円）</th><th>2021年6月期<br>第1期</th><th>2022年6月期<br>第2期</th><th>2023年6月期<br>第3期</th><th>2024年6月期<br>第4期</th><th>2025年6月期<br>第5期</th><th>2026年6月期<br>第6期</th></tr></thead>
+        <tbody>
+          <tr><td>売上高</td><td>407,581</td><td>7,727,523</td><td>21,718,187</td><td>25,022,143</td><td>34,662,696</td><td>55,605,329</td></tr>
+          <tr class="ebt"><td>EBITDA</td><td class="neg">△1,543,617</td><td>4,905,023</td><td>13,735,910</td><td>13,959,694</td><td>24,662,927</td><td>41,727,520</td></tr>
+          <tr><td>営業損益</td><td class="neg">△2,044,617</td><td class="neg">△926,527</td><td class="neg">△3,694,634</td><td class="neg">△5,634,016</td><td class="neg">△2,775,960</td><td class="neg">△3,491,625</td></tr>
+          <tr><td>経常損益</td><td class="neg">△2,089,329</td><td class="neg">△1,495,288</td><td class="neg">△6,161,331</td><td class="neg">△8,924,309</td><td class="neg">△6,672,103</td><td class="neg">△12,105,789</td></tr>
+          <tr class="hl"><td>当期純損益</td><td class="neg">△2,159,329</td><td class="neg">△3,661,249</td><td class="neg">△6,301,331</td><td class="pos">6,701,191</td><td class="neg">△6,812,103</td><td class="neg">△18,475,778</td></tr>
+          <tr class="section"><td>財政状態</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>総資産</td><td>24,598,458</td><td>79,267,430</td><td>141,638,809</td><td>189,788,705</td><td>295,727,379</td><td>481,871,694</td></tr>
+          <tr><td>純資産</td><td class="neg">△2,149,329</td><td class="neg">△5,810,578</td><td class="neg">△12,111,909</td><td class="neg">△5,410,718</td><td class="neg">△12,222,821</td><td class="neg">△30,698,599</td></tr>
+          <tr><td>有利子負債</td><td>26,677,787</td><td>84,938,008</td><td>153,610,718</td><td>195,059,423</td><td>307,810,200</td><td>506,967,024</td></tr>
+          <tr class="section"><td>事業規模</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>保有棟数（棟）</td><td>1</td><td>2</td><td>4</td><td>4</td><td>6</td><td>9</td></tr>
+          <tr class="total"><td>保有戸数（戸）</td><td>14</td><td>24</td><td>46</td><td>48</td><td>78</td><td>154</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="cols even" style="margin-top:clamp(10px,1.8vh,16px)">
+      <div class="card rv" style="--d:.24s">
+        <span class="flag base">表の読み方</span>
+        <p style="font-size:calc(var(--small-size)*1.02)"><b>EBITDA＝営業損益＋減価償却費。</b>2021年6月期の赤字から翌期に黒字へ転じ、以後は増加が続いている。<b>2024年6月期の当期純利益6,701,191円は、青森市の物件（リーマス安方）の売却に伴う固定資産売却益15,765,500円による一時的な黒字であり、同期の経常損益は△8,924,309円の赤字である。</b>2026年6月期の当期純損失には、取得時の一時費用である特別損失6,229,989円を含む。</p>
+      </div>
+      <div class="card rv" style="--d:.32s">
+        <span class="flag base">定義</span>
+        <p style="font-size:calc(var(--small-size)*1.02)"><b>有利子負債</b>＝金融機関借入（長期・短期）＋役員借入金＋関係会社借入金。2026年6月期の内訳は、長期借入441,742,724円・短期借入5,850,000円・役員借入25,274,300円・関係会社借入34,100,000円である。<b>保有戸数</b>は各棟のレントロール・物件概要書で確認した戸数の積み上げで、駐車場は含めない。2026年6月期の154戸には、店舗・テナント4区画（②宮城2区画・④札幌2区画）を含む（住戸のみでは150戸）。</p>
+      </div>
+    </div>
+    <p class="note rv" style="--d:.4s"><b>総資産の整合：</b>本表の総資産は、前ページ「成長の歩み」のグラフに掲げた25／79／142／190／296／482百万円と、百万円未満を四捨五入したうえで一致する。<b>数値の出所：</b>2022年6月期・2024年6月期・2025年6月期・2026年6月期は決算書一式または税務申告書類との照合を行った確定値である。<b>2021年6月期および2023年6月期は、会計システム（freee会計）の試算表のみを出所としており、決算書原本との照合を行っていない。</b>本表に空欄はなく、取得できなかった期・項目はない。</p>
+  </div>
+</section>
+
+<!-- 7. 2026年度のブレイクダウン -->
 <section class="slide" id="s3" aria-label="当期の全体像">
   <div class="slide-content">
-    <p class="kicker rv"><span class="no">02</span> FY2026 BREAKDOWN</p>
+    <p class="kicker rv"><span class="no">05</span> FY2026 BREAKDOWN</p>
     <h2 class="rv" style="--d:.05s">当期の全体像 — 成長は「拡大投資」の結果</h2>
     <div class="kpi-grid">
       <div class="card kpi rv" style="--d:.1s">
@@ -559,7 +931,7 @@ html.js .slide.show .road-wipe-rect{transform:scaleX(1);}
 <!-- 4. 当期ハイライト -->
 <section class="slide" id="s4" aria-label="当期ハイライト">
   <div class="slide-content">
-    <p class="kicker rv"><span class="no">03</span> HIGHLIGHTS</p>
+    <p class="kicker rv"><span class="no">06</span> HIGHLIGHTS</p>
     <h2 class="rv" style="--d:.05s">当期の主な出来事</h2>
     <div class="cols">
       <div class="card rv" style="--d:.12s">
@@ -603,7 +975,7 @@ html.js .slide.show .road-wipe-rect{transform:scaleX(1);}
 <!-- 5. 損益計算書 -->
 <section class="slide" id="s5" aria-label="損益計算書">
   <div class="slide-content">
-    <p class="kicker rv"><span class="no">04</span> PROFIT &amp; LOSS</p>
+    <p class="kicker rv"><span class="no">07</span> PROFIT &amp; LOSS</p>
     <h2 class="rv" style="--d:.05s">損益計算書 — EBITDAで見る本業の力</h2>
     <div class="cols wide">
       <div class="card rv" style="--d:.12s">
@@ -633,17 +1005,99 @@ html.js .slide.show .road-wipe-rect{transform:scaleX(1);}
         <div class="card rv" style="--d:.32s">
           <h3>当期純損失の位置づけ</h3>
           <p style="font-size:calc(var(--small-size)*1.05)">会計上の当期純損失△18,475,778円は、<b>減価償却費（非資金費用）</b>と<b>取得時の一時費用</b>が主因。取得に伴う支払利息の増加も損益を押し下げた。</p>
-          <p class="note"><b>特別損失 6,229,989円の内訳：</b>物件取得諸費用 4,606,289円（収入印紙 235,600円＋登記・融資手数料等 4,370,689円）＋不動産取得税 1,623,700円（⑦十和田 1,044,500円・⑧南相馬 579,200円）。いずれも取得に伴う一時費用で、来期は発生しない見込み。</p>
+          <p class="note"><b>特別損失 6,229,989円の内訳：</b>物件取得諸費用 4,606,289円（収入印紙 235,600円＋登記・融資手数料等 4,370,689円）＋不動産取得税 1,623,700円（⑦十和田 1,044,500円・⑧南相馬 579,200円）。いずれも<b>当期取得分に係る費用であり、取得を継続する限り同種の費用は毎期発生する見込みである</b>。</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 6. 貸借対照表 -->
+<!-- 10. 減価償却の逓減見通し -->
+<section class="slide" id="s5a" aria-label="減価償却の逓減見通し">
+  <div class="slide-content">
+    <p class="kicker rv"><span class="no">08</span> DEPRECIATION OUTLOOK</p>
+    <h2 class="rv" style="--d:.05s">減価償却の逓減見通し — 2030年6月期に経常黒字へ</h2>
+    <p class="lead rv" style="--d:.08s">当社の会計上の赤字は、中古資産の耐用年数を簡便法で算定した結果、減価償却が取得後の短い期間に集中して計上されることが主因である。既存9棟の償却は有限であり、償却が終われば同額がそのまま損益の改善となる。以下は<b>新規取得を行わない場合</b>の見通しである。</p>
+    <div class="card rv" style="--d:.12s; margin-top:clamp(8px,1.6vh,14px)">
+      <h3>棟別の償却明細（2026年6月期末時点）</h3>
+      <div class="tb-wrap"><table class="tb">
+        <thead><tr><th>物件</th><th>取得年月</th><th>建物取得価額</th><th>当期償却額</th><th>逆算した<br>償却率</th><th>推定<br>耐用年数</th><th>期末簿価</th><th>残存<br>償却年数</th></tr></thead>
+        <tbody>
+          <tr><td>①江別パレルモ</td><td>2021年10月</td><td>41,400,000</td><td>3,767,400</td><td>0.091</td><td>11年</td><td>23,504,850</td><td>6年3ヶ月</td></tr>
+          <tr><td>②アーバンシティプレステージ</td><td>2022年7月</td><td>34,122,000</td><td>2,627,394</td><td>0.077</td><td>13年</td><td>23,612,424</td><td>9年0ヶ月</td></tr>
+          <tr class="hl"><td>③ウェストヒルハイツ</td><td>2022年7月</td><td>32,119,000</td><td>8,029,749</td><td>0.250</td><td>4年</td><td>4</td><td>償却完了</td></tr>
+          <tr><td>④エクセレンス東苗穂</td><td>2023年11月</td><td>47,000,000</td><td>5,875,000</td><td>0.125</td><td>8年</td><td>31,333,333</td><td>5年4ヶ月</td></tr>
+          <tr><td>⑤プリムローズ花巻</td><td>2024年10月</td><td>54,553,000</td><td>6,819,125</td><td>0.125</td><td>8年</td><td>42,619,531</td><td>6年3ヶ月</td></tr>
+          <tr><td>⑥グレースランド郡山</td><td>2025年3月</td><td>24,300,000</td><td>6,075,000</td><td>0.250</td><td>4年</td><td>16,200,000</td><td>2年8ヶ月</td></tr>
+          <tr><td>⑦メゾントワダ稲生</td><td>2025年10月</td><td>41,715,480</td><td>7,821,652<br>（9ヶ月分）</td><td>0.250</td><td>4年</td><td>33,893,828</td><td>3年3ヶ月</td></tr>
+          <tr><td>⑧コーポMOMO</td><td>2026年1月</td><td>53,829,101</td><td>3,364,319<br>（6ヶ月分）</td><td>0.125</td><td>8年</td><td>50,464,782</td><td>7年6ヶ月</td></tr>
+          <tr><td>⑨ヴェルディ</td><td>2026年6月</td><td>40,296,286</td><td>839,506<br>（1ヶ月分）</td><td>0.250</td><td>4年</td><td>39,456,780</td><td>3年11ヶ月</td></tr>
+          <tr class="total"><td>合計</td><td>—</td><td>369,334,867</td><td>45,219,145</td><td>—</td><td>—</td><td>261,085,533</td><td>—</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note"><b>償却率・耐用年数は推定値である。</b>当期取得3物件が固定資産台帳に未登録で、耐用年数・償却率を台帳から確認できないため、当期の償却額を建物取得価額で除して逆算した。<b>検証：</b>逆算した耐用年数は、国税庁の中古資産の簡便法（木造住宅の法定耐用年数22年を全部経過した場合は22年×20%＝4年）と整合する。また棟別の期末簿価の合計261,085,533円は貸借対照表の建物261,085,531円と2円（円未満の端数）の差で一致し、この前提で過去6期の減価償却費の実績を1円以内で再現できることを確認した。</p>
+    </div>
+    <div class="cols" style="margin-top:clamp(10px,1.8vh,16px)">
+      <div class="card chart-card rv" style="--d:.24s">
+        <div class="chart-title">今後5年の減価償却費の見通し（新規取得なしの前提・単位：円）</div>
+        <svg viewBox="0 0 620 320" role="img" aria-label="減価償却費の見通し。2026年6月期の実績45,219,145円に対し、2027年6月期と2028年6月期は52,395,498円でピークとなり、2029年6月期は50,370,498円、2030年6月期は37,659,340円へ急減、2031年6月期は25,817,557円となる。経常損益の黒字化ラインである44,718,905円を2030年6月期に下回る。">
+<line x1="60" y1="250" x2="600" y2="250" stroke="rgba(11,27,59,.35)" stroke-width="1.4"/>
+<line x1="60" y1="79.3" x2="600" y2="79.3" stroke="rgba(192,57,43,.55)" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="600" y="72" font-size="11.5" font-weight="700" fill="#C0392B" text-anchor="end" font-family="'Noto Sans JP',sans-serif">経常損益の黒字化ライン 44,718,905円</text>
+<rect class="bar-v" style="--d:0.12s" x="78.2" y="77.4" width="52" height="172.6" rx="5" fill="#5f80ab"/>
+<text x="104.2" y="70" font-size="12" font-weight="800" fill="#0B1B3B" text-anchor="middle" font-family="Inter,sans-serif">45.2</text>
+<rect class="bar-v" style="--d:0.20s" x="166.5" y="49.9" width="52" height="200.1" rx="5" fill="#d99286"/>
+<text x="192.5" y="42.5" font-size="12" font-weight="800" fill="#C0392B" text-anchor="middle" font-family="Inter,sans-serif">52.4</text>
+<rect class="bar-v" style="--d:0.28s" x="254.8" y="49.9" width="52" height="200.1" rx="5" fill="#d99286"/>
+<text x="280.8" y="42.5" font-size="12" font-weight="800" fill="#C0392B" text-anchor="middle" font-family="Inter,sans-serif">52.4</text>
+<rect class="bar-v" style="--d:0.36s" x="343.2" y="57.7" width="52" height="192.3" rx="5" fill="#d17d70"/>
+<text x="369.2" y="50.3" font-size="12" font-weight="800" fill="#C0392B" text-anchor="middle" font-family="Inter,sans-serif">50.4</text>
+<rect class="bar-v" style="--d:0.44s" x="431.5" y="106.2" width="52" height="143.8" rx="5" fill="#3C8454"/>
+<text x="457.5" y="98.8" font-size="12" font-weight="800" fill="#2f6b42" text-anchor="middle" font-family="Inter,sans-serif">37.7</text>
+<rect class="bar-v" style="--d:0.52s" x="519.8" y="151.4" width="52" height="98.6" rx="5" fill="#54A83C"/>
+<text x="545.8" y="144" font-size="12" font-weight="800" fill="#2f6b42" text-anchor="middle" font-family="Inter,sans-serif">25.8</text>
+<text x="413.4" y="122" font-size="11" font-weight="800" fill="#2f6b42" text-anchor="middle" font-family="Inter,sans-serif">△12.7</text>
+<text x="501.7" y="167" font-size="11" font-weight="800" fill="#2f6b42" text-anchor="middle" font-family="Inter,sans-serif">△11.8</text>
+<text x="104.2" y="268" font-size="11" fill="#54749B" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">2026年6月期</text>
+<text x="104.2" y="282" font-size="10" fill="#8aa0bd" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">実績</text>
+<text x="192.5" y="268" font-size="11" fill="#54749B" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">2027年6月期</text>
+<text x="192.5" y="282" font-size="10" fill="#8aa0bd" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">ピーク</text>
+<text x="280.8" y="268" font-size="11" fill="#54749B" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">2028年6月期</text>
+<text x="369.2" y="268" font-size="11" fill="#54749B" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">2029年6月期</text>
+<text x="457.5" y="268" font-size="11" fill="#54749B" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">2030年6月期</text>
+<text x="457.5" y="282" font-size="10" font-weight="700" fill="#2f6b42" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">経常黒字へ</text>
+<text x="545.8" y="268" font-size="11" fill="#54749B" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">2031年6月期</text>
+<text x="60" y="308" font-size="10.5" fill="#8aa0bd" text-anchor="start" font-family="'Noto Sans JP',sans-serif">単位：百万円（表示は百万円未満を四捨五入）／新規取得を行わない前提の見通し</text>
+</svg>
+        <div style="margin-top:clamp(10px,1.6vh,16px)">
+          <span class="flag base">この見通しの前提</span>
+          <p style="font-size:calc(var(--small-size)*1.02); color:var(--text-muted); line-height:1.75">2030年6月期に償却費が12.7百万円減少するのは、耐用年数4年で取得した⑥グレースランド郡山（2029年2月完了）・⑦メゾントワダ稲生（2029年9月完了）・⑨ヴェルディ（2030年5月完了）の償却が2年間で連続して終わるためである。<b>本表は新規取得を行わない場合の見通しであり、毎期の物件取得を継続する場合には新規物件の償却が上乗せされるため、会計上の黒字化はその分だけ後ろにずれる。</b>売上高・販管費・営業外損益を据え置いた試算であり、実現を確約するものではない。</p>
+        </div>
+      </div>
+      <div>
+        <div class="card rv" style="--d:.34s">
+          <h3>経常損益が黒字に転じる条件</h3>
+          <p style="font-size:calc(var(--small-size)*1.03)">2027年6月期の売上高75,599,029円、減価償却費以外の販売費及び一般管理費18,610,011円、営業外損益△12,270,113円をいずれも据え置くと、<b>経常損益＝44,718,905円 − 減価償却費</b>となる。すなわち<b>減価償却費が44,718,905円を下回る期に経常損益が黒字へ転じる</b>。2029年6月期の50.4百万円では届かず、<b>2030年6月期（37.7百万円）で初めてこの条件を満たす。</b></p>
+          <div class="tb-wrap noscroll" style="margin-top:10px"><table class="tb">
+            <thead><tr><th>決算期</th><th>減価償却費</th><th>営業損益</th><th>経常損益</th></tr></thead>
+            <tbody>
+              <tr><td>2027年6月期</td><td>52,395,498</td><td class="pos">＋4,593,520</td><td class="neg">△7,676,593</td></tr>
+              <tr><td>2028年6月期</td><td>52,395,498</td><td class="pos">＋4,593,520</td><td class="neg">△7,676,593</td></tr>
+              <tr><td>2029年6月期</td><td>50,370,498</td><td class="pos">＋6,618,520</td><td class="neg">△5,651,593</td></tr>
+              <tr class="total"><td>2030年6月期</td><td>37,659,340</td><td class="pos">＋19,329,678</td><td class="pos">＋7,059,565</td></tr>
+              <tr><td>2031年6月期</td><td>25,817,557</td><td class="pos">＋31,171,461</td><td class="pos">＋18,901,348</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. 貸借対照表 -->
 <section class="slide" id="s6" aria-label="貸借対照表">
   <div class="slide-content">
-    <p class="kicker rv"><span class="no">05</span> BALANCE SHEET</p>
+    <p class="kicker rv"><span class="no">09</span> BALANCE SHEET</p>
     <h2 class="rv" style="--d:.05s">貸借対照表 — 前期比較</h2>
     <div class="cols bs">
       <div class="card rv" style="--d:.12s">
@@ -685,10 +1139,69 @@ html.js .slide.show .road-wipe-rect{transform:scaleX(1);}
   </div>
 </section>
 
-<!-- 7. キャッシュフロー -->
+<!-- 7. 財務内容の実質 -->
+<section class="slide" id="s6a" aria-label="財務内容の実質">
+  <div class="slide-content">
+    <p class="kicker rv"><span class="no">10</span> FINANCIAL SUBSTANCE</p>
+    <h2 class="rv" style="--d:.05s">財務内容の実質 — 債務超過の状況と実質純資産</h2>
+    <p class="lead rv" style="--d:.08s">当期末の純資産は<span class="num neg">△30,698,599円</span>であり、<b>当社は債務超過の状態にある</b>。拡大投資期の先行費用（減価償却費・取得時一時費用）の累積による繰越損失が主因である。ここでは、代表者およびグループ会社からの借入金を加味した場合の実質的な純資産までの橋渡しを示す。</p>
+    <div class="cols" style="margin-top:clamp(10px,1.8vh,16px)">
+      <div class="card chart-card rv" style="--d:.12s">
+        <div class="chart-title">形式上の純資産から実質純資産への橋渡し（単位：円）</div>
+        <svg viewBox="0 0 560 320" role="img" aria-label="形式上の純資産マイナス30,698,599円に、役員借入金25,274,300円と関係会社借入金34,100,000円を加算すると、実質純資産はプラス28,675,701円となる橋渡し図。">
+<line x1="30" y1="140" x2="545" y2="140" stroke="rgba(11,27,59,.35)" stroke-width="1.3"/>
+<text x="24" y="144" font-size="11" fill="#8aa0bd" text-anchor="end" font-family="Inter,sans-serif">0</text>
+<line x1="130" y1="219.8" x2="168" y2="219.8" stroke="rgba(11,27,59,.30)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="252" y1="154.1" x2="290" y2="154.1" stroke="rgba(11,27,59,.30)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="374" y1="65.4" x2="412" y2="65.4" stroke="rgba(11,27,59,.30)" stroke-width="1.2" stroke-dasharray="4 3"/>
+<rect class="bar-dn" style="--d:0.15s" x="46" y="140" width="84" height="79.8" rx="5" fill="#C0392B" fill-opacity=".85"/>
+<text x="88" y="238" font-size="12.5" font-weight="800" fill="#C0392B" text-anchor="middle" font-family="Inter,sans-serif">△30,698,599</text>
+<rect class="bar-v" style="--d:0.28s" x="168" y="154.1" width="84" height="65.7" rx="5" fill="#5f80ab"/>
+<text x="210" y="191" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle" font-family="Inter,sans-serif">+25,274,300</text>
+<rect class="bar-v" style="--d:0.40s" x="290" y="65.4" width="84" height="88.7" rx="5" fill="#18549C"/>
+<text x="332" y="114" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle" font-family="Inter,sans-serif">+34,100,000</text>
+<rect class="bar-v" style="--d:0.52s" x="412" y="65.4" width="84" height="74.6" rx="5" fill="#3C8454"/>
+<text x="454" y="57" font-size="12.5" font-weight="800" fill="#2f6b42" text-anchor="middle" font-family="Inter,sans-serif">+28,675,701</text>
+<text x="88" y="264" font-size="11.5" font-weight="700" fill="#16304F" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">形式上の純資産</text>
+<text x="88" y="280" font-size="10.5" fill="#8aa0bd" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">貸借対照表</text>
+<text x="210" y="264" font-size="11.5" font-weight="700" fill="#16304F" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">役員借入金</text>
+<text x="210" y="280" font-size="10.5" fill="#8aa0bd" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">加算</text>
+<text x="332" y="264" font-size="11.5" font-weight="700" fill="#16304F" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">関係会社借入金</text>
+<text x="332" y="280" font-size="10.5" fill="#8aa0bd" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">加算</text>
+<text x="454" y="264" font-size="11.5" font-weight="700" fill="#2f6b42" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">実質純資産</text>
+<text x="454" y="280" font-size="10.5" fill="#8aa0bd" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">加算後</text>
+<text x="30" y="308" font-size="10.5" fill="#8aa0bd" text-anchor="start" font-family="'Noto Sans JP',sans-serif">加算額の合計 59,374,300円（役員借入金25,274,300円＋関係会社借入金34,100,000円）</text>
+</svg>
+      </div>
+      <div>
+        <div class="card rv" style="--d:.22s">
+          <h3>役員借入金の推移</h3>
+          <div class="tb-wrap noscroll"><table class="tb">
+            <thead><tr><th>期末</th><th>役員借入金（円）</th><th>増減</th></tr></thead>
+            <tbody>
+              <tr><td>2025年6月末</td><td>26,403,948</td><td>—</td></tr>
+              <tr class="total"><td>2026年6月末</td><td>25,274,300</td><td class="neg">△1,129,648</td></tr>
+            </tbody>
+          </table></div>
+          <p class="note">当期の減少額は1,129,648円で、期末残高は前期からほぼ横ばいの水準にある。</p>
+        </div>
+        <div class="card rv" style="--d:.32s">
+          <span class="flag watch">今後の課題</span>
+          <p style="font-size:calc(var(--small-size)*1.04)">債務超過の状態にあることは、当社の今後の課題である。解消の時期および方法は本資料の作成時点で確定しておらず、数値目標は設定していない。</p>
+        </div>
+      </div>
+    </div>
+    <div class="card rv" style="--d:.42s; margin-top:clamp(10px,1.8vh,16px)">
+      <p class="note" style="margin-top:0"><b>注記1（役員等からの借入金の取扱い）：</b>金融検査マニュアル別冊〔中小企業融資編〕は代表者等からの借入金を原則として自己資本相当額に加味できるとしており、同マニュアル廃止後も金融庁「検査マニュアル廃止後の融資に関する検査・監督の考え方と進め方」が現状の実務を否定しない旨を明記している。ただし代表者等が返済を要求することが明らかな場合はこの限りでなく、また会社から代表者等への貸付金・未収金がある場合は自己資本相当額から減額される。</p>
+      <p class="note"><b>注記2（継続企業の前提に関する事象）：</b>継続企業の前提に関する注記は法定監査を受けない当社に義務づけられるものではないが、監査基準報告書570が例示する事象のうち、当社は「債務超過」「重要な営業損失」に該当する一方、「マイナスの営業キャッシュ・フロー」「借入金の契約条項の不履行」「支払期日における債務の返済の困難性」には該当しない（当期の営業キャッシュ・フローは+28,503,943円、返済の延滞なし）。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8. キャッシュフロー -->
 <section class="slide" id="s7" aria-label="キャッシュフロー">
   <div class="slide-content">
-    <p class="kicker rv"><span class="no">06</span> CASH FLOW</p>
+    <p class="kicker rv"><span class="no">11</span> CASH FLOW</p>
     <h2 class="rv" style="--d:.05s">キャッシュ・フロー — 本業は現金黒字</h2>
     <div class="cf-grid">
       <div class="card cf rv" style="--d:.12s">
@@ -724,7 +1237,7 @@ html.js .slide.show .road-wipe-rect{transform:scaleX(1);}
 <!-- 8. 今期取得物件 -->
 <section class="slide" id="s8" aria-label="今期取得物件">
   <div class="slide-content">
-    <p class="kicker rv"><span class="no">07</span> NEW ACQUISITIONS</p>
+    <p class="kicker rv"><span class="no">12</span> NEW ACQUISITIONS</p>
     <h2 class="rv" style="--d:.05s">当期取得の3物件</h2>
     <div class="prop-grid">
       <div class="card prop rv" style="--d:.12s">
@@ -770,14 +1283,14 @@ html.js .slide.show .road-wipe-rect{transform:scaleX(1);}
         </div>
       </div>
     </div>
-    <p class="note rv" style="--d:.42s">写真はいずれも実写。当期売上高は取得日以降に計上した賃料等（第6期分のみ）。⑨ヴェルディは2026年6月23日取得のため当期の売上計上はない。</p>
+    <p class="note rv" style="--d:.42s">写真はいずれも実写。当期売上高は取得日以降に計上した賃料等（第6期分のみ）。<b>⑨ヴェルディは2026年6月23日取得のため、当期の売上高は取得時の賃料日割精算 189,333円（8日分）のみである。</b>この金額は物件別の集計上「共通・全社」に区分されているため、次ページの物件別売上高では⑨の行に表示されていない。⑦十和田・⑧南相馬についても、取得時の賃料日割精算はそれぞれ物件別売上高に含まれていない。</p>
   </div>
 </section>
 
 <!-- 9. ポートフォリオ -->
 <section class="slide" id="s9" aria-label="ポートフォリオ一覧">
   <div class="slide-content">
-    <p class="kicker rv"><span class="no">08</span> PORTFOLIO</p>
+    <p class="kicker rv"><span class="no">13</span> PORTFOLIO</p>
     <h2 class="rv" style="--d:.05s">保有9物件の一覧</h2>
     <div class="card rv" style="--d:.14s">
       <div class="tb-wrap"><table class="tb">
@@ -791,26 +1304,530 @@ html.js .slide.show .road-wipe-rect{transform:scaleX(1);}
           <tr><td>⑥グレースランド郡山</td><td style="text-align:left">福島県郡山市</td><td>4,312,000</td><td>30,758,525</td><td style="text-align:left">あすか信用組合</td></tr>
           <tr><td>⑦メゾントワダ稲生</td><td style="text-align:left">青森県十和田市</td><td>8,353,300</td><td>69,416,387</td><td style="text-align:left">あすか信用組合</td></tr>
           <tr><td>⑧コーポMOMO</td><td style="text-align:left">福島県南相馬市</td><td>2,885,000</td><td>55,179,131</td><td style="text-align:left">芝信用金庫</td></tr>
-          <tr><td>⑨ヴェルディ</td><td style="text-align:left">埼玉県東松山市</td><td>—（6/23取得）</td><td>53,000,000</td><td style="text-align:left">芝信用金庫</td></tr>
+          <tr><td>⑨ヴェルディ</td><td style="text-align:left">埼玉県東松山市</td><td>—（下記「共通・全社」に189,333円）</td><td>53,000,000</td><td style="text-align:left">芝信用金庫</td></tr>
           <tr><td>個人からの長期借入</td><td style="text-align:left">③弘前 取得資金</td><td>—</td><td>5,000,000</td><td style="text-align:left">代表者</td></tr>
-          <tr><td>共通・全社</td><td style="text-align:left">—</td><td>2,353,479</td><td>—</td><td style="text-align:left">—</td></tr>
+          <tr><td>共通・全社（取得時の賃料日割精算）</td><td style="text-align:left">⑦⑧⑨の取得時</td><td>2,353,479</td><td>—</td><td style="text-align:left">—</td></tr>
           <tr class="total"><td>合計</td><td></td><td>55,605,329</td><td>441,742,724</td><td></td></tr>
         </tbody>
       </table></div>
-      <p class="note">借入残高は長期借入金（期末）の物件別内訳で、合計は貸借対照表の長期借入金441,742,724円と一致（短期借入金5,850,000円を除く）。③ウェストヒルハイツの取得資金には金融機関借入（青森みちのく銀行24,904,000円）に加え代表者からの長期借入5,000,000円を充当。「共通・全社」は入居者付替・敷金振替等、物件に個別帰属しない処理分。</p>
+      <p class="note">借入残高は長期借入金（期末）の物件別内訳で、合計は貸借対照表の長期借入金441,742,724円と一致（短期借入金5,850,000円を除く）。③ウェストヒルハイツの取得資金には金融機関借入（青森みちのく銀行24,904,000円）に加え代表者からの長期借入5,000,000円を充当。<b>「共通・全社」2,353,479円は、当期取得3棟の取得時の賃料日割精算である</b>（⑦十和田 1,252,129円＝2025年10月31日／⑧南相馬 912,017円＝2026年1月27日／⑨東松山 189,333円＝2026年6月23日）。会計上の物件タグが「共通・全社」であったため物件別の行に表示されていないが、全額が個別物件に帰属する。これを各物件へ振り替えた場合の当期売上高は、⑦9,605,429円・⑧3,797,017円・⑨189,333円となる。</p>
     </div>
   </div>
 </section>
 
-<!-- 10. 来期見込み（新規投資なし） -->
+<!-- 16. 稼働率 -->
+<section class="slide" id="s9e" aria-label="稼働率">
+  <div class="slide-content">
+    <p class="kicker rv"><span class="no">14</span> OCCUPANCY</p>
+    <h2 class="rv" style="--d:.05s">稼働率 — 期末90.3%、期中平均92.8%</h2>
+    <div class="kpi-grid">
+      <div class="card kpi rv" style="--d:.1s">
+        <div class="label">期末稼働率（9棟・戸数ベース）</div>
+        <div class="value">90.3<span class="unit">%</span></div>
+        <div class="delta">139戸 ／ 154戸</div>
+        <div class="sub">2026年6月末時点</div>
+      </div>
+      <div class="card kpi gold rv" style="--d:.18s">
+        <div class="label">期中平均稼働率（戸月加重）</div>
+        <div class="value">92.8<span class="unit">%</span></div>
+        <div class="delta">入居戸月 1,152 ／ 保有戸月 1,242</div>
+        <div class="sub">取得月（賃料未計上月）を除外</div>
+      </div>
+      <div class="card kpi rv" style="--d:.26s">
+        <div class="label">賃料ベース稼働率（期末9棟）</div>
+        <div class="value">91.4<span class="unit">%</span></div>
+        <div class="delta">実績賃料 5,967,501円 ／ 満室想定 6,530,810円</div>
+        <div class="sub">満室想定賃料は近似値</div>
+      </div>
+      <div class="card kpi negative rv" style="--d:.34s">
+        <div class="label">最も低い物件（⑧コーポMOMO）</div>
+        <div class="value">62.5<span class="unit">%</span></div>
+        <div class="delta neg">15戸 ／ 24戸（期末・戸数ベース）</div>
+        <div class="sub">賃料ベースでは68.2%</div>
+      </div>
+    </div>
+    <div class="cols wide" style="margin-top:clamp(10px,1.8vh,16px)">
+      <div class="card rv" style="--d:.42s">
+        <h3>物件別の期末稼働率（2026年6月末）</h3>
+        <div class="tb-wrap"><table class="tb">
+          <thead><tr><th>物件</th><th>総戸数</th><th>入居戸数</th><th>戸数ベース<br>稼働率</th><th>賃料ベース<br>稼働率（近似）</th></tr></thead>
+          <tbody>
+            <tr><td>①江別パレルモ</td><td>10</td><td>10</td><td>100.0%</td><td>108.8%</td></tr>
+            <tr><td>②アーバンシティプレステージ</td><td>10</td><td>9</td><td>90.0%</td><td>91.9%</td></tr>
+            <tr class="hl"><td>③ウェストヒルハイツ</td><td>12</td><td>12</td><td>100.0%</td><td>96.2%</td></tr>
+            <tr><td>④エクセレンス東苗穂</td><td>16</td><td>16</td><td>100.0%</td><td>99.1%</td></tr>
+            <tr><td>⑤プリムローズ花巻</td><td>20</td><td>20</td><td>100.0%</td><td>97.5%</td></tr>
+            <tr><td>⑥グレースランド郡山</td><td>10</td><td>8</td><td>80.0%</td><td>79.7%</td></tr>
+            <tr><td>⑦メゾントワダ稲生</td><td>30</td><td>28</td><td>93.3%</td><td>93.2%</td></tr>
+            <tr class="hl"><td>⑧コーポMOMO</td><td>24</td><td>15</td><td>62.5%</td><td>68.2%</td></tr>
+            <tr><td>⑨ヴェルディ</td><td>22</td><td>21</td><td>95.5%</td><td>95.9%</td></tr>
+            <tr class="total"><td>合計（9棟）</td><td>154</td><td>139</td><td>90.3%</td><td>91.4%</td></tr>
+          </tbody>
+        </table></div>
+        <p class="note">⑨ヴェルディの21戸／22戸は2026年6月23日の取得時点の値である（期末の7日前）。取得日から期末までの間の入退去は当社のデータでは確認できない。①江別パレルモの賃料ベース108.8%は、2026年6月に1住戸で2か月分相当の賃料がまとめて入金されたことによる見かけの超過であり、期中平均では96.3%である。<b>賃料ベース稼働率は100%を超えることがあるため、期中平均で判断されたい。</b></p>
+      </div>
+      <div>
+        <div class="card rv" style="--d:.5s">
+          <span class="flag base">物件別に読み取れること</span>
+          <p style="font-size:calc(var(--small-size)*1.0)"><b>③ウェストヒルハイツ（弘前）は、期末で全12戸が入居し戸数ベースでは100%であるが、賃料ベースでは96.2%にとどまる。</b>これは空室の問題ではなく、<b>募集賃料を過去の水準より下げて客付けしている</b>ことを示す。同物件の当期の募集広告費149,600円は8棟中最大であり、客付けの難易度と整合する。</p>
+          <p style="font-size:calc(var(--small-size)*1.0); margin-top:8px"><b>⑧コーポMOMO（南相馬）は逆に、戸数ベース62.5%に対し賃料ベースが68.2%と高い。</b>空室9戸の平均想定家賃33,852円に対し、入居中15戸の平均想定家賃は43,533円であり、<b>空室が相対的に家賃の低い住戸に偏っている</b>。収益への影響は戸数が示すほど大きくない。</p>
+        </div>
+        <div class="card rv" style="--d:.58s">
+          <span class="flag base">算定方法</span>
+          <p style="font-size:calc(var(--small-size)*.98)">期中平均稼働率は<b>戸月加重平均</b>（住戸×月を1単位とし、入居戸月÷保有戸月）で算定した。物件別の稼働率を単純平均する方法は、規模の大小が反映されないため用いていない。</p>
+        </div>
+      </div>
+    </div>
+    <p class="note rv" style="--d:.64s"><b>注記1（取得月を除外する理由）：</b>物件の取得月は、住戸数が取得日をもって保有戸数に算入される一方、その月分の賃料は前所有者との日割精算として一括受領し翌月以降にまとめて計上されるため、分母だけが先に増えて稼働率が実態より著しく低く表示される。実際に⑦メゾントワダ稲生を取得した2025年10月は全社の稼働率が67.6%と表示されるが、同月に既に保有していた6棟の稼働率は93.6%であり、入居状況が悪化した事実はない。同じ事象は⑧コーポMOMOを取得した2026年1月にも生じている。このため取得月を除外した値を主指標とした。<b>取得月を除外しない場合の期中平均稼働率は85.3%である。</b><br>
+    <b>注記2（⑨ヴェルディの取扱い）：</b>期中平均稼働率は8棟ベースで算定し、⑨ヴェルディは当期の賃料対応月数がゼロであるため除外した。⑨を6月分まるごと算入しても92.8%、日数で按分しても92.8%であり、除外の有無で値は変わらない。期末稼働率は9棟ベースで示しているため、⑨の稼働状況は開示から漏れていない。<br>
+    <b>注記3（賃料未入金月の補正・参考値）：</b>滞納やまとめ入金により賃料計上額が0円となった月を入居中として数え直すと、期末稼働率は91.6%（141戸／154戸）で<b>+1.5pt</b>となる。ただし<b>この増加分の全額が⑧コーポMOMOの2戸に由来し、いずれも賃料計上が途切れた月が期末に接しているため、翌期の入金を確認するまで滞納か退去かを判別できない。</b>したがって補正後の値は参考値として注記にとどめ、帳簿と突合できる補正前の値を主指標として採用している。<br>
+    <b>注記4（賃料ベース稼働率は近似値）：</b>当社は住戸ごとの募集賃料台帳を保有していないため、満室想定賃料は各住戸の平常月の賃料の最高値を用いた近似値である。観測期間中に一度も賃料計上のない7戸には同一物件の平均賃料を充当した。過去に達成していない賃料水準は反映されないため、賃料ベース稼働率は実態より高く表示される可能性がある。</p>
+  </div>
+</section>
+
+<!-- 17. NOI -->
+<section class="slide" id="s9f" aria-label="NOI 運営純収益">
+  <div class="slide-content">
+    <p class="kicker rv"><span class="no">15</span> NET OPERATING INCOME</p>
+    <h2 class="rv" style="--d:.05s">NOI（運営純収益） — 賃料収入から運営費用を控除した純収益</h2>
+    <p class="lead rv" style="--d:.08s">NOI（運営純収益）は、賃料等収入から賃貸運営に経常的に必要な費用を控除した額であり、国土交通省の不動産鑑定評価基準が直接還元法で用いる収益費用項目の配列に従って算定した。減価償却費・支払利息・取得時の一時費用は含まない。</p>
+    <div class="cols wide" style="margin-top:clamp(8px,1.6vh,14px)">
+      <div class="card rv" style="--d:.12s">
+        <h3>賃料等収入からNOIまで（第6期実績・9棟）</h3>
+        <div class="tb-wrap noscroll"><table class="tb">
+          <thead><tr><th>段階</th><th>金額（円）</th><th>対収入比</th></tr></thead>
+          <tbody>
+            <tr class="total"><td>賃料等収入（総収入）</td><td>55,605,329</td><td>100.0%</td></tr>
+            <tr><td>　うち家賃・共益費収入</td><td>54,216,658</td><td>97.5%</td></tr>
+            <tr><td>　うち駐車場収入</td><td>1,388,671</td><td>2.5%</td></tr>
+            <tr class="section"><td>運営費用（控除）</td><td class="neg">△10,899,411</td><td>△19.6%</td></tr>
+            <tr><td>　管理委託料</td><td class="neg">△3,400,287</td><td>△6.1%</td></tr>
+            <tr><td>　修繕費・工事費</td><td class="neg">△2,831,922</td><td>△5.1%</td></tr>
+            <tr><td>　公租公課（固定資産税）</td><td class="neg">△1,518,908</td><td>△2.7%</td></tr>
+            <tr><td>　損害保険料</td><td class="neg">△893,250</td><td>△1.6%</td></tr>
+            <tr><td>　決済・振込手数料</td><td class="neg">△768,800</td><td>△1.4%</td></tr>
+            <tr><td>　水道光熱費</td><td class="neg">△614,784</td><td>△1.1%</td></tr>
+            <tr><td>　募集・広告費</td><td class="neg">△392,600</td><td>△0.7%</td></tr>
+            <tr><td>　通信・インターネット費</td><td class="neg">△286,660</td><td>△0.5%</td></tr>
+            <tr><td>　清掃・原状回復費</td><td class="neg">△192,200</td><td>△0.3%</td></tr>
+            <tr class="total ebt"><td>NOI（運営純収益）</td><td>44,705,918</td><td>80.4%</td></tr>
+            <tr><td>資本的支出（控除）</td><td>区分できず</td><td>—</td></tr>
+            <tr><td>NCF（純収益）</td><td>算定不能</td><td>—</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div>
+        <div class="card rv" style="--d:.22s">
+          <h3>NOI利回り</h3>
+          <div class="bridge">
+            <div class="bi sum"><span>通期保有6棟（①〜⑥）<span class="tag-cert fix">確定値</span></span><span class="amt">10.08%</span></div>
+            <div class="bi"><span>　NOI 33,734,937円 ÷ 取得価格 334,800,000円</span><span class="amt">運営費用率 19.70%</span></div>
+            <div class="bi sum"><span>9棟・通年保有換算<span class="tag-cert est">推定値</span></span><span class="amt">10.6%</span></div>
+            <div class="bi"><span>　同上・取得原価ベース</span><span class="amt">10.2%</span></div>
+          </div>
+          <p class="note"><b>通期保有6棟の10.08%は、年換算の仮定を一切置かない当期唯一の確定的なNOI利回りである。</b>9棟の10.6%は、期中に取得した⑦⑧⑨を通年保有したと仮定して収入を年換算し、運営費用は通期保有6棟の実績運営費用率19.70%を当てて推定したものである。算定方法を変えても10.2%〜10.6%の範囲に収まる。</p>
+        </div>
+        <div class="card rv" style="--d:.32s">
+          <h3>表面利回りとNOI利回りの差 3.4pt</h3>
+          <div class="bridge">
+            <div class="bi"><span>満室想定表面利回り（近似）</span><span class="amt">14.0%</span></div>
+            <div class="bi"><span>　空室損失・賃料減額</span><span class="amt neg">△0.9pt</span></div>
+            <div class="bi"><span>　運営費用（収入の19.7%）</span><span class="amt neg">△2.6pt</span></div>
+            <div class="bi sum"><span>NOI利回り（9棟・通年保有換算）</span><span class="amt">10.6%</span></div>
+          </div>
+          <p class="note"><b>投資判断にあたっては、表面利回りから概ね20%を控除した水準が純収益の目線となる。</b>本資料で「表面利回り」とは満室を想定した年間賃料収入を取得価格で除した値であり、運営費用を控除していない。</p>
+        </div>
+      </div>
+    </div>
+    <p class="note rv" style="--d:.44s"><b>注記1（NCFを算定していない理由）：</b>不動産鑑定評価基準ではNOIから資本的支出を控除してNCF（純収益）を求めるが、当期の修繕・工事費2,831,922円は会計上その全額を修繕費として費用処理しており、<b>建物の価値を高める支出（資本的支出）と原状回復のための支出（修繕費）を区分するフィールドが会計データに存在しない。</b>このため当期のNCFは算定していない。参考として、摘要に「工事代金」「リフォーム工事」と明記された支出は904,290円（②アーバンシティプレステージ686,290円・⑥グレースランド郡山218,000円）であり、これが資本的支出に該当しうる金額の上限の目安となる。翌期以降は、見積書の段階で資本的支出と修繕費を区分して記帳する運用に改める。<br>
+    <b>注記2（火災保険の処理が物件間で統一されていない）：</b>火災保険料の会計処理は物件間で統一されていない。⑦メゾントワダ稲生707,630円・⑨ヴェルディ185,620円は当期の費用として処理し、⑧コーポMOMO1,808,080円は長期前払費用として資産計上し、既存6棟は当期の保険料の計上がない。<b>このため物件別のNOIは保険料の面で比較できず、既存6棟のNOIは保険料が控除されていないぶん過大に算定されている可能性がある。</b>翌期に処理方法を統一する。<br>
+    <b>注記3（部分期間の物件の読み方）：</b>⑦⑧⑨は当期の保有期間が部分期間であるため、これらのNOI率を通期保有6棟と直接比較してはならない。物件間の比較は通年保有換算のNOI利回りで行う。共通・全社の運営費用607,685円は、賃貸運営費用として物件へ配賦する根拠が摘要から読み取れない支出を含むため、物件へ配賦せず別掲した（配賦した場合の9棟のNOI利回りは10.45%）。</p>
+  </div>
+</section>
+
+<!-- 18. 財務健全性 -->
+<section class="slide" id="s9a" aria-label="財務健全性">
+  <div class="slide-content">
+    <p class="kicker rv"><span class="no">16</span> FINANCIAL SOUNDNESS</p>
+    <h2 class="rv" style="--d:.05s">財務健全性 — 返済能力と手元流動性</h2>
+    <div class="kpi-grid">
+      <div class="card kpi rv" style="--d:.1s">
+        <div class="label">LTV（簿価ベース・金融機関借入）</div>
+        <div class="value">92.9<span class="unit">%</span></div>
+        <div class="delta">447,592,724円 ÷ 481,871,694円</div>
+        <div class="sub">取得資産ベースでは 77.8%</div>
+      </div>
+      <div class="card kpi gold rv" style="--d:.18s">
+        <div class="label">DSCR（元利返済カバー率）</div>
+        <div class="value">1.44<span class="unit">倍</span></div>
+        <div class="delta pos">EBITDA 41,727,520円 ÷ 元利返済 28,910,094円</div>
+        <div class="sub">元利返済を賄ったうえで余剰がある水準</div>
+      </div>
+      <div class="card kpi rv" style="--d:.26s">
+        <div class="label">EBITDA有利子負債倍率</div>
+        <div class="value">10.6<span class="unit">倍</span></div>
+        <div class="delta">(447,592,724円 − 4,413,463円) ÷ 41,727,520円</div>
+        <div class="sub">債務償還年数 10.7年／平均調達金利 2.31%</div>
+      </div>
+      <div class="card kpi negative rv" style="--d:.34s">
+        <div class="label">手元流動性（月商倍率）</div>
+        <div class="value">0.95<span class="unit">ヶ月</span></div>
+        <div class="delta neg">月商1ヶ月分を下回る＝当社の課題</div>
+        <div class="sub num">現預金 4,413,463円 ÷ 月商 4,633,777円</div>
+      </div>
+    </div>
+    <div class="cols even" style="margin-top:clamp(10px,1.8vh,16px)">
+      <div class="card chart-card rv" style="--d:.42s">
+        <div class="chart-title">LTV（有利子負債 ÷ 資産）— 分母・分子の4通り</div>
+        <svg viewBox="0 0 560 266" role="img" aria-label="LTVの4通りの算出結果。簿価ベースの金融機関借入は92.9%、簿価ベースの有利子負債合計は105.2%、取得資産ベースの金融機関借入は77.8%、取得資産ベースの有利子負債合計は88.1%。">
+<line x1="200" y1="30" x2="200" y2="214" stroke="rgba(11,27,59,.35)" stroke-width="1.3"/>
+<line x1="509.1" y1="30" x2="509.1" y2="214" stroke="rgba(192,57,43,.45)" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="509.1" y="24" font-size="10.5" font-weight="700" fill="#C0392B" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">資産＝100%</text>
+<rect class="bar-h" style="--d:0.10s" x="200" y="44" width="287.1" height="32" rx="5" fill="#18549C"/>
+<text x="479" y="65" font-size="13" font-weight="800" fill="#ffffff" text-anchor="end" font-family="Inter,sans-serif">92.9%</text>
+<text x="190" y="65" font-size="12.5" fill="#16304F" text-anchor="end" font-family="'Noto Sans JP',sans-serif">簿価・金融機関借入</text>
+<rect class="bar-h" style="--d:0.20s" x="200" y="88" width="325.2" height="32" rx="5" fill="#C0392B"/>
+<text x="517" y="109" font-size="13" font-weight="800" fill="#ffffff" text-anchor="end" font-family="Inter,sans-serif">105.2%</text>
+<text x="190" y="109" font-size="12.5" fill="#16304F" text-anchor="end" font-family="'Noto Sans JP',sans-serif">簿価・有利子負債合計</text>
+<rect class="bar-h" style="--d:0.30s" x="200" y="132" width="240.5" height="32" rx="5" fill="#3C8454"/>
+<text x="432" y="153" font-size="13" font-weight="800" fill="#ffffff" text-anchor="end" font-family="Inter,sans-serif">77.8%</text>
+<text x="190" y="153" font-size="12.5" fill="#16304F" text-anchor="end" font-family="'Noto Sans JP',sans-serif">取得資産・金融機関借入</text>
+<rect class="bar-h" style="--d:0.40s" x="200" y="176" width="272.3" height="32" rx="5" fill="#54A83C"/>
+<text x="464" y="197" font-size="13" font-weight="800" fill="#ffffff" text-anchor="end" font-family="Inter,sans-serif">88.1%</text>
+<text x="190" y="197" font-size="12.5" fill="#16304F" text-anchor="end" font-family="'Noto Sans JP',sans-serif">取得資産・有利子負債合計</text>
+<text x="4" y="238" font-size="10.5" fill="#8aa0bd" text-anchor="start" font-family="'Noto Sans JP',sans-serif">簿価＝総資産 481,871,694円</text>
+<text x="4" y="254" font-size="10.5" fill="#8aa0bd" text-anchor="start" font-family="'Noto Sans JP',sans-serif">取得資産＝保有物件の取得価格合計 575,438,700円</text>
+</svg>
+      </div>
+      <div class="card rv" style="--d:.5s">
+        <h3>その他の財務指標</h3>
+        <div class="tb-wrap noscroll"><table class="tb">
+          <thead><tr><th>指標</th><th>当期の値</th><th>算式（円）</th></tr></thead>
+          <tbody>
+            <tr class="ebt"><td>DSCR</td><td>1.44倍</td><td>41,727,520 ÷ 28,910,094</td></tr>
+            <tr class="hl"><td>EBITDA有利子負債倍率</td><td>10.6倍</td><td>(447,592,724−4,413,463) ÷ 41,727,520</td></tr>
+            <tr><td>債務償還年数</td><td>10.7年</td><td>447,592,724 ÷ 41,727,520</td></tr>
+            <tr><td>平均調達金利</td><td>2.31%</td><td>9,396,566 ÷ 407,388,612</td></tr>
+            <tr><td>手元流動性</td><td class="neg">0.95ヶ月</td><td>4,413,463 ÷ 4,633,777</td></tr>
+            <tr><td>賃貸不動産が総資産に占める割合</td><td>97.4%</td><td>(261,085,531＋208,197,833) ÷ 481,871,694</td></tr>
+          </tbody>
+        </table></div>
+        <p class="note">有利子負債合計＝短期借入金5,850,000円＋長期借入金441,742,724円＋役員借入金25,274,300円＋関係会社借入金34,100,000円＝506,967,024円。年間元利返済額＝元本返済19,513,528円＋支払利息9,396,566円＝28,910,094円。平均有利子負債は407,388,612円、月商は売上高55,605,329円÷12＝4,633,777円。</p>
+      </div>
+    </div>
+    <div class="cols even" style="margin-top:clamp(10px,1.8vh,16px)">
+      <div class="card rv" style="--d:.58s">
+        <span class="flag good">評価できる水準</span>
+        <p style="font-size:calc(var(--small-size)*1.04)"><b>DSCRは1.44倍。</b>EBITDA 41,727,520円で年間元利返済額28,910,094円を賄ったうえで余剰が残る。<b>EBITDA有利子負債倍率は10.6倍</b>で、中小企業活性化協議会が再生計画の数値基準に示す「有利子負債の対キャッシュフロー比率は概ね10倍以下」という目線にほぼ接する水準にある。取得資産ベースのLTVは77.8%（有利子負債合計では88.1%）。</p>
+      </div>
+      <div class="card rv" style="--d:.66s">
+        <span class="flag watch">課題</span>
+        <p style="font-size:calc(var(--small-size)*1.04)"><b>手元流動性は0.95ヶ月分</b>（現預金4,413,463円÷月商4,633,777円）で、月商1ヶ月分を下回る。当期は営業キャッシュ・フロー28,503,943円から元本返済19,513,528円を差し引いて<span class="num pos">+8,990,415円</span>の手残りがあり、この範囲で手元資金を積み増していくことになる。<b>簿価ベースのLTVは92.9%</b>（有利子負債合計では105.2%）と高い水準にある。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. 金利上昇の影響 -->
+<section class="slide" id="s9b" aria-label="金利上昇の影響">
+  <div class="slide-content">
+    <p class="kicker rv"><span class="no">17</span> INTEREST RATE</p>
+    <h2 class="rv" style="--d:.05s">金利上昇の影響 — 確認できた改定6回は、すべて引き上げ</h2>
+    <div class="kpi-grid">
+      <div class="card kpi rv" style="--d:.1s">
+        <div class="label">加重平均金利（9物件の長期借入）</div>
+        <div class="value">3.03<span class="unit">%</span></div>
+        <div class="delta neg">当初 2.61% → 現行 3.03%（+0.41pt）</div>
+        <div class="sub num">対象残高 436,742,724円</div>
+      </div>
+      <div class="card kpi negative rv" style="--d:.18s">
+        <div class="label">変動金利比率（金融機関借入）</div>
+        <div class="value">85.7<span class="unit">%</span></div>
+        <div class="delta num">447,592,724円中 383,742,724円</div>
+        <div class="sub">固定金利であることが書面で確認できた借入はゼロ</div>
+      </div>
+      <div class="card kpi rv" style="--d:.26s">
+        <div class="label">書面で確認できた金利改定</div>
+        <div class="value">6<span class="unit">回</span></div>
+        <div class="delta neg">すべて引き上げ／引き下げはゼロ</div>
+        <div class="sub">あすか①は当初 2.20% から 3.15% へ（+0.95pt）</div>
+      </div>
+      <div class="card kpi gold rv" style="--d:.34s">
+        <div class="label">DSCR（改定後・試算）</div>
+        <div class="value">1.42<span class="unit">倍</span></div>
+        <div class="delta">1.44倍 → 1.42倍</div>
+        <div class="sub num">2026年6月30日 あすか5本 +0.25pt／年間 555,400円の増加</div>
+      </div>
+    </div>
+    <div class="cols" style="margin-top:clamp(10px,1.8vh,16px)">
+      <div class="card chart-card rv" style="--d:.42s">
+        <div class="chart-title">金利改定の推移（借入ごとの年利率・時系列）</div>
+        <svg viewBox="0 0 652 268" role="img" aria-label="借入ごとの年利率の推移。あすか①は2.20%から4回の改定を経て3.15%へ、あすか②は2.20%から3.10%へ、北日本①は2.125%から2.625%へ、青森みちのく①②は1.95%から2.20%へ、いずれも上昇している。">
+<line x1="62" y1="240" x2="596" y2="240" stroke="rgba(11,27,59,.22)" stroke-width="1.2"/>
+<line x1="62" y1="212" x2="596" y2="212" stroke="rgba(11,27,59,.09)" stroke-width="1"/>
+<line x1="62" y1="142" x2="596" y2="142" stroke="rgba(11,27,59,.09)" stroke-width="1"/>
+<line x1="62" y1="72" x2="596" y2="72" stroke="rgba(11,27,59,.09)" stroke-width="1"/>
+<text x="54" y="216" font-size="10.5" fill="#8aa0bd" text-anchor="end" font-family="Inter,sans-serif">2.0%</text>
+<text x="54" y="146" font-size="10.5" fill="#8aa0bd" text-anchor="end" font-family="Inter,sans-serif">2.5%</text>
+<text x="54" y="76" font-size="10.5" fill="#8aa0bd" text-anchor="end" font-family="Inter,sans-serif">3.0%</text>
+<text x="62" y="256" font-size="10" fill="#8aa0bd" text-anchor="middle" font-family="Inter,sans-serif">2021/7</text>
+<text x="165.4" y="256" font-size="10" fill="#8aa0bd" text-anchor="middle" font-family="Inter,sans-serif">2022/7</text>
+<text x="268.7" y="256" font-size="10" fill="#8aa0bd" text-anchor="middle" font-family="Inter,sans-serif">2023/7</text>
+<text x="372.1" y="256" font-size="10" fill="#8aa0bd" text-anchor="middle" font-family="Inter,sans-serif">2024/7</text>
+<text x="475.4" y="256" font-size="10" fill="#8aa0bd" text-anchor="middle" font-family="Inter,sans-serif">2025/7</text>
+<text x="578.8" y="256" font-size="10" fill="#8aa0bd" text-anchor="middle" font-family="Inter,sans-serif">2026/7</text>
+<line x1="570.1" y1="34" x2="570.1" y2="240" stroke="rgba(192,57,43,.42)" stroke-width="1.1" stroke-dasharray="5 4"/>
+<text x="596" y="28" font-size="10.5" font-weight="700" fill="#C0392B" text-anchor="end" font-family="'Noto Sans JP',sans-serif">令和8年6月30日 あすか5本を一斉に +0.25pt</text>
+<path class="grow-draw" style="--d:.1s" d="M 87.8 184 H 174.0 V 142 H 406.5 V 121 H 484.0 V 86 H 570.1 V 51 H 596" fill="none" stroke="#18549C" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="grow-draw" style="--d:.1s" d="M 165.4 184 H 212.7 V 149 H 406.5 V 128 H 484.0 V 93 H 570.1 V 58 H 596" fill="none" stroke="#3C8454" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="grow-draw" style="--d:.1s" d="M 397.9 194.5 H 449.6 V 159.5 H 544.4 V 124.5 H 596" fill="none" stroke="#B08D2E" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path class="grow-draw" style="--d:.1s" d="M 432.4 219 H 449.6 V 184 H 596" fill="none" stroke="#C0392B" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="87.8" cy="184" r="3.6" fill="#18549C"/><circle cx="406.5" cy="121" r="3.6" fill="#18549C"/><circle cx="570.1" cy="51" r="3.6" fill="#18549C"/>
+<circle cx="174.0" cy="142" r="3.6" fill="#ffffff" stroke="#18549C" stroke-width="1.6" stroke-dasharray="2 1.6"/>
+<circle cx="484.0" cy="86" r="3.6" fill="#ffffff" stroke="#18549C" stroke-width="1.6" stroke-dasharray="2 1.6"/>
+<circle cx="165.4" cy="184" r="3.6" fill="#3C8454"/><circle cx="406.5" cy="128" r="3.6" fill="#3C8454"/><circle cx="570.1" cy="58" r="3.6" fill="#3C8454"/>
+<circle cx="212.7" cy="149" r="3.6" fill="#ffffff" stroke="#3C8454" stroke-width="1.6" stroke-dasharray="2 1.6"/>
+<circle cx="484.0" cy="93" r="3.6" fill="#ffffff" stroke="#3C8454" stroke-width="1.6" stroke-dasharray="2 1.6"/>
+<circle cx="397.9" cy="194.5" r="3.6" fill="#B08D2E"/><circle cx="449.6" cy="159.5" r="3.6" fill="#B08D2E"/><circle cx="544.4" cy="124.5" r="3.6" fill="#B08D2E"/>
+<circle cx="432.4" cy="219" r="3.6" fill="#C0392B"/><circle cx="449.6" cy="184" r="3.6" fill="#C0392B"/>
+<text x="600" y="47" font-size="11" font-weight="800" fill="#18549C" text-anchor="start" font-family="Inter,sans-serif">3.15%</text>
+<text x="600" y="66" font-size="11" font-weight="800" fill="#3C8454" text-anchor="start" font-family="Inter,sans-serif">3.10%</text>
+<text x="600" y="128" font-size="11" font-weight="800" fill="#8a6d1e" text-anchor="start" font-family="Inter,sans-serif">2.625%</text>
+<text x="600" y="188" font-size="11" font-weight="800" fill="#C0392B" text-anchor="start" font-family="Inter,sans-serif">2.20%</text>
+</svg>
+        <div class="rate-legend">
+          <div class="rl"><i style="background:#18549C"></i><span><b>あすか①（①江別パレルモ）</b> <span class="v">2.20% → 3.15%（+0.95pt）</span></span></div>
+          <div class="rl"><i style="background:#3C8454"></i><span><b>あすか②（②アーバンシティプレステージ）</b> <span class="v">2.20% → 3.10%（+0.90pt）</span></span></div>
+          <div class="rl"><i style="background:#B08D2E"></i><span><b>北日本①（⑤プリムローズ花巻）</b> <span class="v">2.125% → 2.625%（+0.50pt）</span></span></div>
+          <div class="rl"><i style="background:#C0392B"></i><span><b>青森みちのく①②（③ウェストヒルハイツ）</b> <span class="v">1.95% → 2.20%（+0.25pt）</span></span></div>
+        </div>
+        <p class="note">白抜きの点は、改定が行われた事実は確認できるものの、<b>改定日を書面から特定できない改定</b>である。作図上、確認できる期間の中間に置いている。青森みちのく①②の線は、1.95%であることを書面で確認できた2025年2月から描いている。</p>
+      </div>
+      <div class="card chart-card rv" style="--d:.5s">
+        <div class="chart-title">DSCRの感応度（試算）</div>
+        <svg viewBox="0 0 610 272" role="img" aria-label="DSCRの感応度の試算。第6期実績1.44倍、2026年6月30日の改定後1.42倍、変動金利分がさらに0.5ポイント上昇した場合1.35倍、1.0ポイント上昇した場合1.27倍。">
+<line x1="58" y1="214" x2="546" y2="214" stroke="rgba(11,27,59,.22)" stroke-width="1.2"/>
+<line x1="58" y1="179.2" x2="546" y2="179.2" stroke="rgba(11,27,59,.07)" stroke-width="1"/>
+<line x1="58" y1="144.4" x2="546" y2="144.4" stroke="rgba(192,57,43,.38)" stroke-width="1.1" stroke-dasharray="5 4"/>
+<line x1="58" y1="109.6" x2="546" y2="109.6" stroke="rgba(11,27,59,.07)" stroke-width="1"/>
+<line x1="58" y1="74.8" x2="546" y2="74.8" stroke="rgba(11,27,59,.07)" stroke-width="1"/>
+<line x1="58" y1="40" x2="546" y2="40" stroke="rgba(11,27,59,.07)" stroke-width="1"/>
+<text x="50" y="218" font-size="10" fill="#8aa0bd" text-anchor="end" font-family="Inter,sans-serif">1.00</text>
+<text x="50" y="148" font-size="10" font-weight="700" fill="#C0392B" text-anchor="end" font-family="Inter,sans-serif">1.20</text>
+<text x="50" y="113" font-size="10" fill="#8aa0bd" text-anchor="end" font-family="Inter,sans-serif">1.30</text>
+<text x="50" y="78" font-size="10" fill="#8aa0bd" text-anchor="end" font-family="Inter,sans-serif">1.40</text>
+<text x="50" y="44" font-size="10" fill="#8aa0bd" text-anchor="end" font-family="Inter,sans-serif">1.50</text>
+<rect class="bar-v" style="--d:0.12s" x="74" y="60.9" width="84" height="153.1" rx="5" fill="#18549C"/>
+<rect class="bar-v" style="--d:0.22s" x="190" y="67.8" width="84" height="146.2" rx="5" fill="#243C90"/>
+<rect class="bar-v" style="--d:0.32s" x="306" y="92.2" width="84" height="121.8" rx="5" fill="#B08D2E"/>
+<rect class="bar-v" style="--d:0.42s" x="422" y="120.0" width="84" height="94.0" rx="5" fill="#C0392B"/>
+<text x="116" y="52" font-size="15" font-weight="800" fill="#0B1B3B" text-anchor="middle" font-family="Inter,sans-serif">1.44</text>
+<text x="232" y="59" font-size="15" font-weight="800" fill="#0B1B3B" text-anchor="middle" font-family="Inter,sans-serif">1.42</text>
+<text x="348" y="83" font-size="15" font-weight="800" fill="#8a6d1e" text-anchor="middle" font-family="Inter,sans-serif">1.35</text>
+<text x="464" y="111" font-size="15" font-weight="800" fill="#C0392B" text-anchor="middle" font-family="Inter,sans-serif">1.27</text>
+<text x="116" y="232" font-size="10.5" font-weight="700" fill="#16304F" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">現状</text>
+<text x="116" y="246" font-size="9.6" fill="#8aa0bd" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">第6期実績</text>
+<text x="232" y="232" font-size="10.5" font-weight="700" fill="#16304F" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">+0.25pt（実績）</text>
+<text x="232" y="246" font-size="9.6" fill="#8aa0bd" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">2026/6/30 あすか5本</text>
+<text x="348" y="232" font-size="10.5" font-weight="700" fill="#16304F" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">+0.5pt</text>
+<text x="348" y="246" font-size="9.6" fill="#8aa0bd" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">変動金利 確認分</text>
+<text x="464" y="232" font-size="10.5" font-weight="700" fill="#16304F" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">+1.0pt</text>
+<text x="464" y="246" font-size="9.6" fill="#8aa0bd" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">変動金利 確認分</text>
+<text x="608" y="141" font-size="9.6" font-weight="700" fill="#C0392B" text-anchor="end" font-family="'Noto Sans JP',sans-serif">DSCR 1.20倍</text>
+</svg>
+        <p class="note"><b>試算の前提</b>：EBITDA 41,727,520円と年間元本返済額 19,513,528円を第6期実績で固定し、「対象残高 × 上昇幅」を支払利息に加算して再計算した。+0.5pt・+1.0pt の対象は、変動金利であることを確認できた 383,742,724円。<b>金融機関借入 447,592,724円 の全額を対象とした場合は、+0.5pt で 1.34倍、+1.0pt で 1.25倍</b>となる。</p>
+      </div>
+    </div>
+    <div class="cols even" style="margin-top:clamp(10px,1.8vh,16px)">
+      <div class="card rv" style="--d:.58s">
+        <span class="flag watch">金利改定の履歴</span>
+        <div class="rate-steps">
+          <div class="rs"><span class="nm">あすか①（江別）</span><span class="fl">2.20%（当初・令和3年10月）→ 2.50% → 2.65%（令和6年11月30日）→ 2.90% → <b>3.15%（令和8年6月30日）</b>＝累計 <b>+0.95pt</b></span></div>
+          <div class="rs"><span class="nm">あすか②（宮城）</span><span class="fl">2.20% → 2.45% → 2.60% → 2.85% → <b>3.10%</b></span></div>
+          <div class="rs"><span class="nm">北日本①（花巻）</span><span class="fl">2.125%（令和6年10月29日実行）→ 2.375%（令和7年4月25日返済分から）→ <b>2.625%（令和8年3月25日返済分から）</b>＝1年5ヶ月で <b>+0.50pt</b>。毎回返済額 584,352円 → 604,254円</span></div>
+          <div class="rs"><span class="nm">青森みちのく①②（弘前）</span><span class="fl">1.95% → <b>2.20%</b>（令和7年4月1日。書面に「今回利率変動 0.25000%」と明記）</span></div>
+          <div class="rs"><span class="nm">見直しの周期</span><span class="fl">あすか信用組合の利率見直し日は <b>5月31日・11月30日の半期</b></span></div>
+        </div>
+        <p class="note">2026年6月30日の一斉改定は、あすか信用組合の借入5本（対象残高 222,159,840円）を一律 +0.25pt 引き上げるもので、年間支払利息は <b>555,400円</b> 増加する（試算）。内訳は次のとおり。</p>
+        <div class="rate-chips">
+          <span>借入① 2.90% → 3.15%</span>
+          <span>借入② 2.85% → 3.10%</span>
+          <span>借入③ 2.90% → 3.15%</span>
+          <span>借入④ 2.85% → 3.10%</span>
+          <span>借入⑤ 2.85% → 3.10%</span>
+        </div>
+      </div>
+      <div class="card rv" style="--d:.66s">
+        <span class="flag base">本ページの注記</span>
+        <div class="act todo" style="margin-top:2px">
+          <span class="at">金利の固定化を行っていない</span>
+          当社は<b>金利スワップ等による固定化を行っていない</b>。固定金利であることを書面で確認できた借入は1件もなく、金利上昇の影響を緩和する手段を有していない。
+        </div>
+        <div class="act done" style="background:rgba(24,84,156,.08); border-color:rgba(24,84,156,.24)">
+          <span class="at" style="color:var(--ac-blue)">感応度の試算である</span>
+          本ページの数値は、<b>将来の金利水準を予測するものではなく、一定の前提を置いた感応度の試算</b>である。実際には元本が毎月逓減するため、初年度の利息増加額は試算をやや下回る。
+        </div>
+        <div class="act todo">
+          <span class="at">未確認の借入がある</span>
+          <b>芝信用金庫②（⑨東松山ヴェルディ・年3.45%）は返済予定表を入手中のため、金利種別・改定履歴は未確認</b>である。変動金利比率85.7%は、変動金利であることを確認できた分のみを分子としており、実際の比率はこれより高い可能性がある。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13. 事業等のリスク：リスクの一覧 -->
+<section class="slide" id="s9c" aria-label="事業等のリスク リスクの一覧">
+  <div class="slide-content">
+    <p class="kicker rv"><span class="no">18</span> RISK OVERVIEW</p>
+    <h2 class="rv" style="--d:.05s">事業等のリスク — リスクの一覧</h2>
+    <p class="lead rv" style="--d:.08s">当社の財政状態、経営成績及びキャッシュ・フローの状況に重要な影響を与える可能性があると経営者が認識している主要なリスクは、以下のとおりです。以下は当社の事業に関するすべてのリスクを網羅したものではなく、記載以外のリスクも存在します。文中の将来に関する事項は、第6期末（2026年6月30日）現在において当社が判断したものです。</p>
+    <div class="card rv" style="--d:.14s; margin-top:clamp(10px,1.8vh,16px)">
+      <div class="tb-wrap"><table class="tb">
+        <thead><tr><th>#</th><th>リスク項目</th><th>当社の現状を示す主な数値</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>空室率の上昇及び賃料水準の下落</td><td>売上高 55,605,329円の大部分が賃料収入／9棟154戸／期末稼働率 90.3%</td></tr>
+          <tr class="hl"><td>2</td><td>人口減少地域への資産集中<span class="badge-detail">次ページで詳述</span></td><td>9棟が6道県9市町に所在、大半が人口減少地域</td></tr>
+          <tr class="hl"><td>3</td><td>金利上昇<span class="badge-detail">次ページで詳述</span></td><td>平均調達金利 2.31%／2026年6月30日に5本を一斉に0.25pt引上げ</td></tr>
+          <tr class="hl"><td>4</td><td>手元流動性<span class="badge-detail">次ページで詳述</span></td><td>現金 4,413,463円＝月商0.95ヶ月分／営業CF ＋28,503,943円</td></tr>
+          <tr class="hl"><td>5</td><td>大規模修繕及び築古設備の更新<span class="badge-detail">次ページで詳述</span></td><td>減価償却費 45,219,145円＝売上高の81.3%（木造築古中心）</td></tr>
+          <tr><td>6</td><td>自然災害</td><td>6道県9市町に分散、北海道・東北に偏在</td></tr>
+          <tr><td>7</td><td>特定の金融機関への依存</td><td>あすか信用組合が9棟中5棟／金融機関借入 447,592,724円</td></tr>
+          <tr class="hl"><td>8</td><td>債務超過の継続<span class="badge-detail">次ページで詳述</span></td><td>純資産 △30,698,599円／当期純損失 △18,475,778円／総資産 481,871,694円</td></tr>
+          <tr><td>9</td><td>代表者及び関係会社からの借入への依存</td><td>59,374,300円＝有利子負債の11.7%／代表者への貸付金0件</td></tr>
+          <tr><td>10</td><td>管理会社への依存</td><td>154戸の管理を外部委託、従業員は極小規模</td></tr>
+          <tr><td>11</td><td>法令及び税制の変更</td><td>非上場・法定監査対象外／減価償却費が売上高の81.3%</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">（参考）財務指標: LTV簿価ベース92.9%／取得資産ベース77.8%、DSCR1.44倍、EBITDA有利子負債倍率10.6倍、有利子負債506,967,024円。<b>網掛けの5項目</b>は、次ページで「リスクの内容／当社の現状／対応方針」の3段により詳述する。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 14. 事業等のリスク：主要なリスクの詳細 -->
+<section class="slide" id="s9d" aria-label="事業等のリスク 主要なリスクの詳細">
+  <div class="slide-content">
+    <p class="kicker rv"><span class="no">19</span> KEY RISKS</p>
+    <h2 class="rv" style="--d:.05s">事業等のリスク — 主要なリスクの詳細（重要度の高い5項目）</h2>
+    <p class="lead rv" style="--d:.08s">対応方針は、すでに実施している内容（実行済み）と、これから取り組む内容（今後の課題）に分けて記載している。</p>
+    <div class="risk-list">
+
+      <div class="card rv" style="--d:.12s">
+        <div class="risk-head"><span class="rn">3</span><h3>金利上昇に関するリスク</h3></div>
+        <div class="risk-3">
+          <div>
+            <span class="seg-label">リスクの内容</span>
+            <p class="seg-body">当社の金融機関借入は変動金利による調達が中心であり、市場金利の上昇は、借入残高に対してほぼ直接に支払利息の増加として反映されます。支払利息の増加は、当期純損益及び元利金返済後の手元資金を圧迫します。当社は金利スワップ等による金利の固定化を行っておらず、金利上昇の影響を緩和する手段を有していません。</p>
+          </div>
+          <div>
+            <span class="seg-label">当社の現状</span>
+            <p class="seg-body">第6期末の有利子負債残高は<b>506,967,024円</b>、うち金融機関からの借入は<b>447,592,724円</b>です。平均調達金利は<b>2.31%</b>です。2026年6月30日、あすか信用組合からの借入5本について、以下のとおり一斉に金利が引き上げられました。</p>
+            <div class="rate-chips">
+              <span>借入① 2.90% → 3.15%</span>
+              <span>借入② 2.85% → 3.10%</span>
+              <span>借入③ 2.90% → 3.15%</span>
+              <span>借入④ 2.85% → 3.10%</span>
+              <span>借入⑤ 2.85% → 3.10%</span>
+            </div>
+            <p class="seg-body" style="margin-top:8px">いずれも0.25ポイントの引上げです。仮に金融機関借入447,592,724円の全額に0.25ポイントの金利上昇が及んだ場合、年間支払利息は<b>約112万円増加する計算になります（試算）</b>。当社のLTVは簿価ベース92.9%、取得資産ベース77.8%であり、レバレッジが高いほど金利変動が損益に与える影響は大きくなります。</p>
+          </div>
+          <div>
+            <span class="seg-label">対応方針</span>
+            <div class="act done"><span class="at">実行済み</span>借入ごとの適用金利及び改定時期を一覧で把握し、改定通知の受領時点で影響額を算定しています。</div>
+            <div class="act todo"><span class="at">今後の課題</span>金利上昇局面の継続を前提に、固定金利への切替え又は借換えの可否を各金融機関と協議すること。第7期以降の資金計画に、追加の金利上昇を織り込んだ複数シナリオを設定すること。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card rv" style="--d:.18s">
+        <div class="risk-head"><span class="rn">4</span><h3>手元流動性に関するリスク</h3></div>
+        <div class="risk-3">
+          <div>
+            <span class="seg-label">リスクの内容</span>
+            <p class="seg-body">賃貸事業では、賃料の入金は月次で平準化される一方、原状回復費用、修繕費、固定資産税、火災保険料等の支出は特定の時期に集中します。手元現金が薄い状態では、突発的な支出、複数戸の同時退去、災害による一時的な収入停止等が生じた場合に、元利金の返済又は必要な修繕の実施が困難になる可能性があります。</p>
+          </div>
+          <div>
+            <span class="seg-label">当社の現状</span>
+            <p class="seg-body">第6期末の現金及び預金は<b>4,413,463円</b>で、月商（売上高55,605,329円の12分の1＝約4,633,777円）の<b>0.95ヶ月分</b>にとどまります。一方で、第6期の営業キャッシュ・フローは<b>＋28,503,943円</b>と黒字であり、DSCRは1.44倍、借入金の延滞は発生していません。すなわち、期を通じた返済原資は確保されているものの、時点の手元資金の厚みが不足している状態です。</p>
+          </div>
+          <div>
+            <span class="seg-label">対応方針</span>
+            <div class="act done"><span class="at">実行済み</span>全借入について延滞を発生させることなく約定返済を継続しています。営業キャッシュ・フローの黒字を維持しています。</div>
+            <div class="act todo"><span class="at">今後の課題</span>手元現金の目標水準（月商の複数ヶ月分）を設定し、当期利益の留保又は当座貸越枠等の予備的な資金調達手段の確保により、これを達成すること。大口支出の発生時期を年間カレンダーで管理し、資金繰り表の運用を定着させること。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card rv" style="--d:.24s">
+        <div class="risk-head"><span class="rn">8</span><h3>債務超過の継続に関するリスク</h3></div>
+        <div class="risk-3">
+          <div>
+            <span class="seg-label">リスクの内容</span>
+            <p class="seg-body">債務超過の状態が継続する場合、金融機関の与信判断において不利に働き、新規借入及び借換えの条件が悪化し、又は謝絶される可能性があります。また、取引先との与信取引においても制約を受ける可能性があります。債務超過の解消には、当期純利益の計上による利益剰余金の積み上げ、又は増資等の資本増強が必要となります。</p>
+          </div>
+          <div>
+            <span class="seg-label">当社の現状</span>
+            <p class="seg-body">第6期末の純資産は<b>△30,698,599円</b>であり、債務超過の状態です。第6期の当期純損失は<b>△18,475,778円</b>でした。ただし、この損失の主因は減価償却費45,219,145円（売上高比81.3%）であり、営業キャッシュ・フローは＋28,503,943円の黒字、借入金の延滞もありません。すなわち、現金の出入りを伴う本業の収支は黒字であり、債務超過は主として中古資産の簡便法償却による短期集中的な費用計上の累積によって生じています。総資産は481,871,694円です。</p>
+          </div>
+          <div>
+            <span class="seg-label">対応方針</span>
+            <div class="act done"><span class="at">実行済み</span>営業キャッシュ・フローの黒字及び約定返済の継続により、返済能力を維持しています（DSCR1.44倍）。代表者への貸付金・未収金は0件であり、資産の実在性に疑義を生じさせる項目はありません。</div>
+            <div class="act todo"><span class="at">今後の課題</span>稼働率の改善と経費の抑制により当期純損益の黒字化を図り、債務超過を解消すること。解消までの見込み時期と道筋を、金融機関に対して定量的に説明できる形で整理すること。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card rv" style="--d:.30s">
+        <div class="risk-head"><span class="rn">2</span><h3>人口減少地域への資産集中に関するリスク</h3></div>
+        <div class="risk-3">
+          <div>
+            <span class="seg-label">リスクの内容</span>
+            <p class="seg-body">賃貸住宅の需要は、その所在市町村の人口及び世帯数の動向に直接左右されます。人口減少が進む地域では、中長期的に賃貸需要の総量が縮小し、稼働率の低下、募集賃料の下落、物件売却時の買い手の限定、売却価格の下落が生じる可能性があります。また、地域の主要雇用先の撤退等、市町村単位の事象が特定物件の収益に直接影響します。</p>
+          </div>
+          <div>
+            <span class="seg-label">当社の現状</span>
+            <p class="seg-body">当社の保有9棟154戸は、北海道江別市・札幌市、宮城県村田町、青森県弘前市・十和田市、岩手県花巻市、福島県郡山市・南相馬市、埼玉県東松山市に所在しています。<b>札幌市及び埼玉県東松山市を除き、いずれも人口減少局面にある地方都市及び町です。</b>当社は三大都市圏中心部に賃貸用不動産を保有していません。1棟あたり平均約17.1戸と規模が小さく、1棟の稼働状況の変動が全体に及ぼす影響が相対的に大きい構造です。</p>
+          </div>
+          <div>
+            <span class="seg-label">対応方針</span>
+            <div class="act done"><span class="at">実行済み</span>9棟を1都1道4県の9市町に分散して保有し、単一市町村への集中を回避しています。</div>
+            <div class="act todo"><span class="at">今後の課題</span>市町村単位の人口動態及び賃貸需給を定期的に確認し、物件ごとの保有継続・売却の判断基準を明文化すること。人口減少の影響が特に大きい物件については、売却も選択肢として検討すること。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card rv" style="--d:.36s">
+        <div class="risk-head"><span class="rn">5</span><h3>大規模修繕及び築古設備の更新に関するリスク</h3></div>
+        <div class="risk-3">
+          <div>
+            <span class="seg-label">リスクの内容</span>
+            <p class="seg-body">建物の経年に伴い、屋根・外壁・防水・給排水設備等の更新工事が必要となります。これらは金額が大きく、実施時期の裁量も限られます。修繕を先送りすれば入居者の満足度低下と退去、募集競争力の低下を招き、実施すれば多額の支出が発生します。近年は建設資材価格及び労務費が上昇しており、工事費が想定を上回る可能性があります。</p>
+          </div>
+          <div>
+            <span class="seg-label">当社の現状</span>
+            <p class="seg-body">当社の保有物件は木造の築古アパートが中心です。第6期の減価償却費は<b>45,219,145円</b>で、売上高55,605,329円の<b>81.3%</b>に相当します。これは中古資産の耐用年数を簡便法により算定していることから、償却が取得後の短期間に集中して計上されるためです。この結果、会計上は当期純損失△18,475,778円となる一方、営業キャッシュ・フローは＋28,503,943円の黒字となっています。ただし、減価償却費は現金支出を伴わない費用であり、実際の修繕支出とは連動しないため、償却が進んでも将来の修繕資金が自動的に手当てされるわけではありません。</p>
+          </div>
+          <div>
+            <span class="seg-label">対応方針</span>
+            <div class="act done"><span class="at">実行済み</span>退去時の原状回復及び日常的な小修繕は、管理会社を通じて都度実施しています。</div>
+            <div class="act todo"><span class="at">今後の課題</span>9棟について建物・設備ごとの更新時期と概算費用を洗い出した中長期修繕計画を作成すること。同計画に基づく修繕資金の積立方針を定めること（本項目は上記4.手元流動性の課題と一体で検討する）。</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 12. 来期見込み（新規投資なし） -->
 <section class="slide" id="s10" aria-label="3期推移と来期見込み">
   <div class="slide-content">
-    <p class="kicker rv"><span class="no">09</span> FY2027 OUTLOOK</p>
+    <p class="kicker rv"><span class="no">20</span> FY2027 OUTLOOK</p>
     <h2 class="rv" style="--d:.05s">3期推移（2025 → 2027年6月期）— 2027は新規取得の有無で比較</h2>
     <div class="cols">
       <div class="card chart-card rv" style="--d:.12s">
         <div class="chart-title">2025→2027年6月期の3期推移（百万円／YoYは前年同期比・2027は投資なし／ありを併記）</div>
-        <svg viewBox="0 0 680 430" role="img" aria-label="2025年6月期から2027年6月期の3期推移。売上高は34.7・55.6・（投資なし75.6／投資あり79.6）百万円。EBITDAは24.7・41.7・（58.4／62.2）百万円。当期純損益は△6.8・△18.5・（△15.8／△21.7）百万円。2027年のみ新規投資なし・ありの2本を併記。">
+        <svg viewBox="0 0 680 430" role="img" aria-label="2025年6月期から2027年6月期の3期推移。売上高は34.7・55.6・（投資なし75.6／投資あり79.6）百万円。EBITDAは24.7・41.7・（58.4／62.2）百万円。当期純損益は△6.8・△18.5・（△7.8／△13.7）百万円。2027年のみ新規投資なし・ありの2本を併記。">
 <defs><linearGradient id="c2rev" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#54A83C"/><stop offset="1" stop-color="#18549C"/></linearGradient></defs>
 <rect x="55" y="13" width="12" height="12" rx="3" fill="#a9bdd6"/><text x="72" y="23" font-size="11" fill="#54749B" font-family="'Noto Sans JP',sans-serif">2025年(実績)</text>
 <rect x="175" y="13" width="12" height="12" rx="3" fill="#5f80ab"/><text x="192" y="23" font-size="11" fill="#54749B" font-family="'Noto Sans JP',sans-serif">2026年(実績)</text>
@@ -847,10 +1864,10 @@ html.js .slide.show .road-wipe-rect{transform:scaleX(1);}
 <text x="505.0" y="279.0" font-size="11.5" font-weight="700" fill="#C0392B" text-anchor="middle" font-family="Inter,sans-serif">△6.8</text>
 <rect class="bar-dn" style="--d:0.22s" x="522.0" y="250.0" width="26" height="43.4" rx="5" fill="#d99286"/>
 <text x="535.0" y="306.4" font-size="11.5" font-weight="700" fill="#C0392B" text-anchor="middle" font-family="Inter,sans-serif">△18.5</text>
-<rect class="bar-dn" style="--d:0.29s" x="552.0" y="250.0" width="26" height="37.2" rx="5" fill="#d17d70"/>
-<text x="565.0" y="300.2" font-size="11.5" font-weight="700" fill="#C0392B" text-anchor="middle" font-family="Inter,sans-serif">△15.8</text>
-<rect class="bar-dn" style="--d:0.36s" x="582.0" y="250.0" width="26" height="51.0" rx="5" fill="#C0392B"/>
-<text x="595.0" y="314.0" font-size="11.5" font-weight="700" fill="#C0392B" text-anchor="middle" font-family="Inter,sans-serif">△21.7</text>
+<rect class="bar-dn" style="--d:0.29s" x="552.0" y="250.0" width="26" height="18.4" rx="5" fill="#d17d70"/>
+<text x="565.0" y="281.4" font-size="11.5" font-weight="700" fill="#C0392B" text-anchor="middle" font-family="Inter,sans-serif">△7.8</text>
+<rect class="bar-dn" style="--d:0.36s" x="582.0" y="250.0" width="26" height="32.1" rx="5" fill="#C0392B"/>
+<text x="595.0" y="295.1" font-size="11.5" font-weight="700" fill="#C0392B" text-anchor="middle" font-family="Inter,sans-serif">△13.7</text>
 <text x="160" y="345" font-size="12.5" fill="#16304F" font-weight="700" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">売上高</text>
 <text x="355" y="345" font-size="12.5" fill="#16304F" font-weight="700" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">EBITDA</text>
 <text x="550" y="345" font-size="12.5" fill="#16304F" font-weight="700" text-anchor="middle" font-family="'Noto Sans JP',sans-serif">当期純損益（△）</text>
@@ -862,14 +1879,16 @@ html.js .slide.show .road-wipe-rect{transform:scaleX(1);}
           <tbody>
             <tr><td>売上高</td><td>34,662,696</td><td>55,605,329</td><td>75,599,029</td><td>79,645,630</td></tr>
             <tr class="ebt"><td>EBITDA</td><td>24,662,927</td><td>41,727,520</td><td>58,367,815</td><td>62,191,853</td></tr>
-            <tr class="total"><td>当期純損益（税引後）</td><td class="neg">△6,812,103</td><td class="neg">△18,475,778</td><td class="neg">△15,846,342</td><td class="neg">△21,681,938</td></tr>
+            <tr class="hl"><td>営業損益</td><td class="neg">△2,775,960</td><td class="neg">△3,491,625</td><td class="pos">＋4,593,520</td><td>—</td></tr>
+            <tr class="total"><td>当期純損益（税引後）</td><td class="neg">△6,812,103</td><td class="neg">△18,475,778</td><td class="neg">△7,816,593</td><td class="neg">△13,652,189</td></tr>
           </tbody>
         </table></div>
+        <p class="note"><b>減価償却費の見直し（2026年7月28日）：</b>③弘前ウェストヒルハイツは2022年7月取得・耐用年数4年で<b>2026年6月期末に減価償却が完了した</b>（期末簿価4円）。当初の来期見込みは同物件の当期実績8,029,749円を翌期にそのまま据え置いていたため、<b>FY2027の減価償却費から8,029,749円を除外して見直した</b>。これにより投資なしシナリオの当期純損益は△15,846,342円→<b>△7,816,593円</b>、営業損益は△3,436,229円→<b>＋4,593,520円（黒字転換）</b>となり、投資ありシナリオの当期純損益も同額を減じて△21,681,938円→<b>△13,652,189円</b>となる。減価償却費は営業損益から控除したうえでEBITDAに足し戻すため、<b>EBITDA 58,367,815円・売上高 75,599,029円・後述の頭金 約1,631万円はいずれも変わらない</b>。投資ありシナリオの営業損益は、新規取得物件の減価償却費が確定していないため算定していない。</p>
       </div>
       <div>
         <div class="card rv" style="--d:.24s">
           <h3>新規取得を重ねる成長シナリオ</h3>
-          <p style="font-size:calc(var(--small-size)*1.03)">2025→2026年6月期で売上高は34.7→55.6百万円・EBITDAは24.7→41.7百万円へ拡大。新規取得がなくても、当期取得3棟の通年寄与で2027年6月期の売上高は75.6百万円・EBITDAは58.4百万円へさらに伸びる見込み。さらに手元キャッシュを頭金に新規1棟（表面利回り13%以上の築古）を取得すれば、売上高79.6百万円・EBITDA62.2百万円まで伸びる。</p>
+          <p style="font-size:calc(var(--small-size)*1.03)">2025→2026年6月期で売上高は34.7→55.6百万円・EBITDAは24.7→41.7百万円へ拡大。新規取得がなくても、当期取得3棟の通年寄与で2027年6月期の売上高は75.6百万円・EBITDAは58.4百万円へさらに伸びる見込み。さらに手元キャッシュを頭金に新規1棟（表面利回り13%以上の築古）を取得すれば、売上高79.6百万円・EBITDA62.2百万円まで伸びる。<b>③弘前の減価償却完了を反映した結果、新規取得を行わない場合の2027年6月期の営業損益は＋4,593,520円と黒字に転じる見込みである。</b></p>
         </div>
         <div class="card rv" style="--d:.34s">
           <h3>複利のエンジン</h3>
@@ -880,7 +1899,8 @@ html.js .slide.show .road-wipe-rect{transform:scaleX(1);}
               <div class="lev-step hero"><div class="n">STEP 2 — 取得</div><div class="v">約6,041<span style="font-size:.5em">万円</span></div><div class="t">借入 約4,411万円<br>レバレッジ約3.7倍</div></div>
             </div>
           </div>
-          <p class="note" style="margin-top:12px">当期末に生み出す手元キャッシュを翌期の頭金に充て、借入で約3.7倍に拡大して高利回りの築古を取得する。初年度は取得諸費用と半年分の減価償却が先行するため純損益は一時的に悪化（△15.8→△21.7百万円）するが、翌期以降は通年寄与で改善に向かう。実際の取得可否・条件は個別物件の精査に基づき別途判断する。</p>
+          <p class="note" style="margin-top:12px"><b>頭金 約1,631万円の算定根拠：</b>頭金＝当期末現金 4,413,463円 ＋ FY2027の現金増減額 21,899,824円 − 運転資金留保 10,000,000円 ＝ <b>16,313,287円</b>。<b>当期実績のキャッシュ・フローではなく翌期見込みベースで算定している。</b>FY2027の現金増減額21,899,824円は、税引後当期純損益に減価償却費・長期前払費用償却を足し戻した45,957,702円から、借入元本返済見込額24,057,878円を差し引いた額である。運転資金留保10,000,000円および目標LTV73%（レバレッジ約3.7倍）は、計算から導かれた値ではなく当社が方針として置いた前提値である。</p>
+          <p class="note">当期末に生み出す手元キャッシュを翌期の頭金に充て、借入で約3.7倍に拡大して高利回りの築古を取得する。初年度は取得諸費用と半年分の減価償却が先行するため純損益は一時的に悪化（△7.8→△13.7百万円）するが、翌期以降は通年寄与で改善に向かう。実際の取得可否・条件は個別物件の精査に基づき別途判断する。</p>
         </div>
       </div>
     </div>
@@ -890,7 +1910,7 @@ html.js .slide.show .road-wipe-rect{transform:scaleX(1);}
 <!-- 12. ビジョン -->
 <section class="slide vision bright" id="s12" aria-label="ビジョン">
   <div class="slide-content">
-    <p class="kicker rv"><span class="no">10</span> OUR MISSION</p>
+    <p class="kicker rv"><span class="no">21</span> OUR MISSION</p>
     <h2 class="v-mission rv" style="--d:.05s">消滅都市の、<span class="accent">ラスト大家。</span></h2>
     <p class="v-sub rv" style="--d:.14s">縮んでいく東北の、生き残るコアを面で押さえる。築古の再生と毎年の取得継続を複利のエンジンとして回し続ける。当期は3棟を取得し、総資産は481.9百万円・EBITDAは41.7百万円へ拡大した。ここが、長い上り坂の折り返し地点である。</p>
     <div class="v-gold-rule rv" style="--d:.2s" aria-hidden="true"></div>
@@ -965,6 +1985,75 @@ html.js .slide.show .road-wipe-rect{transform:scaleX(1);}
   </div>
 </section>
 
+<!-- 24. 後発事象 -->
+<section class="slide" id="s12a" aria-label="後発事象">
+  <div class="slide-content">
+    <p class="kicker rv"><span class="no">22</span> SUBSEQUENT EVENTS</p>
+    <h2 class="rv" style="--d:.05s">後発事象</h2>
+    <div class="se-hero rv" style="--d:.1s">
+      <p class="big">重要な後発事象はありません。</p>
+      <p style="margin-top:10px; font-size:calc(var(--body-size)*.98); color:var(--text-muted)">2026年6月30日の決算日後、本資料の作成日である2026年7月28日までの間に、当社の財政状態、経営成績及びキャッシュ・フローの状況に重要な影響を及ぼす事象は発生していません。</p>
+    </div>
+    <div class="cols wide" style="margin-top:clamp(10px,1.8vh,16px)">
+      <div class="card rv" style="--d:.2s">
+        <h3>確認した範囲と結果（2026年7月1日〜7月28日）</h3>
+        <div class="tb-wrap"><table class="tb lefty">
+          <thead><tr><th>区分</th><th>結果</th><th>確認の内容</th></tr></thead>
+          <tbody>
+            <tr><td>物件の取得・売却</td><td>該当なし</td><td>取得又は売却の意思決定・契約締結を示す資料は存在しない</td></tr>
+            <tr><td>新規借入・借換え・<br>金利改定</td><td>該当なし</td><td>融資関連の資料に2026年7月1日以降に作成・更新されたものはない</td></tr>
+            <tr><td>大規模修繕・災害</td><td>該当なし</td><td>単一住戸の原状回復1件のみ（下記）。大規模修繕・災害復旧に該当するものはない</td></tr>
+            <tr><td>重要な退去</td><td>該当なし</td><td>個別住戸の退去精算1件のみ（下記）。金額は僅少</td></tr>
+            <tr><td>訴訟・重要な契約・<br>組織変更</td><td>該当なし</td><td>訴訟・罹災証明・保険金請求・組織変更を示す資料は検出されなかった</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div>
+        <div class="card rv" style="--d:.3s">
+          <span class="flag base">通常の営業活動の範囲として整理した事象</span>
+          <div class="act done" style="background:rgba(24,84,156,.08); border-color:rgba(24,84,156,.24); margin-top:6px">
+            <span class="at" style="color:var(--ac-blue)">⑦メゾントワダ稲生 2-D号室の原状回復</span>
+            退去後の単一住戸の原状回復（クロス・床材・設備の更新）。既存業者の見積は税込<span class="num">約120万円</span>で、2026年7月時点では相見積りを取得している段階である。<b>退去後の原状回復は通常の営業活動であり、後発事象に該当しない。</b>
+          </div>
+          <div class="act done" style="background:rgba(24,84,156,.08); border-color:rgba(24,84,156,.24)">
+            <span class="at" style="color:var(--ac-blue)">⑥グレースランド郡山 205号室の退去精算</span>
+            個別住戸の退去に伴う精算（修繕協力金<span class="num">50,000円</span>）。金額は僅少であり、通常の営業活動の範囲内である。
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="note rv" style="--d:.42s"><b>確認の方法：</b>当社の物件関係・融資関係のファイルを対象に、2026年7月1日以降に作成又は更新されたものを全件抽出し（該当18件）、あわせて「契約」「買付」「重要事項」「決済」「借入」「返済予定」「保険金」「罹災」「訴訟」の語で横断検索を行った。抽出された18件のうち、6件は期末以前に発生した事象の書類を7月に整理・保管したことによるものであり、事象の発生日は決算日前である。<br>
+    <b>確認できていない範囲：電子メールおよびチャットの2026年7月受信分は確認していない。</b>契約・融資の初期段階は電子メールのみで進行し、ファイルとして保存されていない場合がある。この点は本ページの記載の限界である。また、会計システム上の2026年7月の仕訳は確認していない。<br>
+    <b>参考：</b>2026年7月14日に山形県東根市の一棟物件の検討資料を入手しているが、買付証明書・売買契約書・重要事項説明書のいずれも存在せず、取得の意思決定又は契約締結の事実はない。したがって後発事象として開示すべき事象ではなく、新規物件の検討を継続していることを示す事業方針の一環として記載する。</p>
+  </div>
+</section>
+
+<!-- 25. 注記 -->
+<section class="slide" id="s13" aria-label="注記">
+  <div class="slide-content">
+    <p class="kicker rv"><span class="no">23</span> NOTES</p>
+    <h2 class="rv" style="--d:.05s">注記 — 本資料の作成前提</h2>
+    <div class="notes-grid" style="margin-top:clamp(12px,2.2vh,20px)">
+      <div class="card rv" style="--d:.12s">
+        <span class="flag base">監査の状況</span>
+        <h3>本資料は監査を受けていない</h3>
+        <p>本資料は当社が社内で作成したものであり、<b>公認会計士等による監査を受けていない</b>。決算数値は税務申告の準備段階のものであり、顧問税理士の確認により変動する可能性がある。</p>
+      </div>
+      <div class="card rv" style="--d:.22s">
+        <span class="flag base">将来に関する記述</span>
+        <h3>実現を確約するものではない</h3>
+        <p>本資料の将来に関する記述（2027年6月期見込み・長期ロードマップ）は作成時点で入手可能な情報に基づく当社の判断であり、<b>その実現を確約するものではない</b>。前提条件が変動した場合には結果が異なる。</p>
+      </div>
+      <div class="card rv" style="--d:.32s">
+        <span class="flag base">セグメント情報</span>
+        <h3>単一セグメントのため記載を省略</h3>
+        <p>当社は不動産賃貸の単一セグメントのため、<b>セグメント別の記載を省略している</b>。</p>
+      </div>
+    </div>
+    <p class="note rv" style="--d:.42s">合同会社あっぷるキャピタル（単体）第6期 2026年6月期 決算説明資料／作成日 2026年7月24日／対象期間 2025年7月1日〜2026年6月30日</p>
+  </div>
+</section>
+
 </main>
 
 <script>
@@ -1009,21 +2098,19 @@ html.js .slide.show .road-wipe-rect{transform:scaleX(1);}
   }, {threshold: 0.2});
   slides.forEach(function(s){ io.observe(s); });
 
-  var io2 = new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if(en.isIntersecting){
-        var idx = slides.indexOf(en.target);
-        dotEls.forEach(function(d, i){ d.classList.toggle('on', i === idx); });
-        pagenum.textContent = (idx + 1) + ' / ' + slides.length;
-      }
-    });
-  }, {threshold: 0.55});
-  slides.forEach(function(s){ io2.observe(s); });
+  /* ドット・ページ番号は現在位置から算出する。
+     ビューポートより十分に高いページでも交差率の閾値に依存せず正しく更新されるようにするため。 */
+  function syncNav(){
+    var idx = currentIndex();
+    dotEls.forEach(function(d, i){ d.classList.toggle('on', i === idx); });
+    pagenum.textContent = (idx + 1) + ' / ' + slides.length;
+  }
 
   function onScroll(){
     var h = document.documentElement;
     var max = h.scrollHeight - h.clientHeight;
     progress.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+    syncNav();
   }
   document.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
