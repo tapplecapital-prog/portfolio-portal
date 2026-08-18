@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated_at": "2026-08-18T08:00:00.995490",
+    "generated_at": "2026-08-18T10:34:59.104793",
     "source": "たいせい決算.xlsm",
-    "latest_actual_month": "2026-06",
+    "latest_actual_month": "2026-07",
     "months": [
       "2020-06",
       "2020-07",
@@ -102,12 +102,12 @@
         {
           "initial_balance": 61500000.0,
           "rate": 0.025,
-          "current_balance": 54700294.0
+          "current_balance": 54594614.0
         },
         {
           "initial_balance": 0,
           "rate": 0.004,
-          "current_balance": 1232000.0
+          "current_balance": 1190000.0
         }
       ],
       "occupancy": {
@@ -1237,7 +1237,7 @@
           "loan_balance": 55784614.0,
           "occupied": 8,
           "room_count": 10,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-08",
@@ -1277,7 +1277,7 @@
             "家賃": 52000.0,
             "共益費": 6000.0,
             "駐車場": 6000.0,
-            "水道料": 2046.0,
+            "水道料": 2095.0,
             "ケーブルTV回線料": 1050.0,
             "保険手数料": -800.0,
             "リフォームパック料": -2900.0
@@ -1286,11 +1286,11 @@
         "202": {
           "room": "202",
           "items": {
-            "家賃": 80516.0,
-            "共益費": 10064.0,
+            "家賃": 48000.0,
+            "共益費": 6000.0,
             "駐車場": -2516.0,
             "水道料": 2260.0,
-            "ケーブルTV回線料": 2200.0,
+            "ケーブルTV回線料": 1100.0,
             "リフォームパック料": 1593.0
           }
         },
@@ -1322,7 +1322,7 @@
             "家賃": 53000.0,
             "共益費": 6000.0,
             "駐車場": 3000.0,
-            "水道料": 2277.0,
+            "水道料": 2293.0,
             "ケーブルTV回線料": 1050.0,
             "保険手数料": -822.0,
             "リフォームパック料": -3800.0
@@ -1334,7 +1334,7 @@
             "家賃": 48000.0,
             "共益費": 6000.0,
             "駐車場": 6000.0,
-            "水道料": 6499.0,
+            "水道料": 7755.0,
             "ケーブルTV回線料": 1100.0,
             "リフォームパック料": 612.0
           }
@@ -1345,7 +1345,7 @@
             "家賃": 37000.0,
             "共益費": 5000.0,
             "駐車場": 3000.0,
-            "水道料": 2260.0,
+            "水道料": 2244.0,
             "ケーブルTV回線料": 1100.0,
             "リフォームパック料": 157.0
           }
@@ -1581,7 +1581,7 @@
         {
           "initial_balance": 62000000.0,
           "rate": 0.036,
-          "current_balance": 56471698.0
+          "current_balance": 56390359.0
         }
       ],
       "occupancy": {
@@ -2612,7 +2612,7 @@
           "loan_balance": 56390359.0,
           "occupied": 10,
           "room_count": 10,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-08",
@@ -2864,7 +2864,7 @@
         {
           "initial_balance": 45000000.0,
           "rate": 0.02775,
-          "current_balance": 35571562.0
+          "current_balance": 35414512.0
         }
       ],
       "occupancy": {
@@ -3974,7 +3974,7 @@
           "loan_balance": 35414512.0,
           "occupied": 10,
           "room_count": 10,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-08",
@@ -4141,12 +4141,12 @@
         {
           "initial_balance": 39000000.0,
           "rate": 0.0315,
-          "current_balance": 30712000.0
+          "current_balance": 30564000.0
         },
         {
           "initial_balance": 0,
           "rate": 0.004,
-          "current_balance": 850000.0
+          "current_balance": 825000.0
         }
       ],
       "occupancy": {
@@ -5109,7 +5109,7 @@
           "loan_balance": 31389000.0,
           "occupied": 10,
           "room_count": 10,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-08",
@@ -5166,7 +5166,7 @@
         "105": {
           "room": "105",
           "items": {
-            "家賃": 80000.0
+            "家賃": 40000.0
           }
         },
         "106": {
@@ -5290,7 +5290,7 @@
         {
           "initial_balance": 43000000.0,
           "rate": 0.031,
-          "current_balance": 36846427.0
+          "current_balance": 36718808.0
         }
       ],
       "occupancy": {
@@ -6042,7 +6042,7 @@
           "loan_balance": 36718808.0,
           "occupied": 9,
           "room_count": 10,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-08",
@@ -6099,7 +6099,7 @@
           "items": {
             "家賃": 36000.0,
             "駐車場": 3300.0,
-            "共益費": 1100.0,
+            "共益費": 1430.0,
             "自治会費": 0
           }
         },
@@ -6243,12 +6243,12 @@
         {
           "initial_balance": 28000000.0,
           "rate": 0.018,
-          "current_balance": 20512000.0
+          "current_balance": 20356000.0
         },
         {
           "initial_balance": 6000000.0,
           "rate": 0.018,
-          "current_balance": 4392000.0
+          "current_balance": 4358500.0
         }
       ],
       "occupancy": {
@@ -7022,7 +7022,7 @@
           "loan_balance": 24714500.0,
           "occupied": 12,
           "room_count": 12,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-08",
@@ -7351,7 +7351,7 @@
         {
           "initial_balance": 64000000.0,
           "rate": 0.0315,
-          "current_balance": 54427296.0
+          "current_balance": 54125889.0
         }
       ],
       "occupancy": {
@@ -7943,7 +7943,7 @@
           "loan_balance": 54125889.0,
           "occupied": 16,
           "room_count": 16,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-08",
@@ -8240,7 +8240,7 @@
         {
           "initial_balance": 90000000.0,
           "rate": 0.02625,
-          "current_balance": 81469667.0
+          "current_balance": 81043693.0
         }
       ],
       "occupancy": {
@@ -8651,7 +8651,7 @@
           "loan_balance": 81043693.0,
           "occupied": 20,
           "room_count": 20,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-08",
@@ -8827,7 +8827,7 @@
           "room": "Ⅲ-駐車場合計",
           "items": {
             "駐車場": 28600.0,
-            "町費": 0
+            "町費": 7200.0
           }
         }
       },
@@ -8907,7 +8907,7 @@
         {
           "initial_balance": 33000000.0,
           "rate": 0.031,
-          "current_balance": 30758525.0
+          "current_balance": 30608778.0
         }
       ],
       "occupancy": {
@@ -9132,7 +9132,7 @@
           "loan_balance": 30608778.0,
           "occupied": 8,
           "room_count": 10,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-08",
@@ -9323,13 +9323,13 @@
         {
           "initial_balance": 72000000.0,
           "rate": 0.031,
-          "current_balance": 69416387.0
+          "current_balance": 69095312.0
         }
       ],
       "occupancy": {
-        "occupied": 28,
+        "occupied": 27,
         "total": 30,
-        "rate": 93.3
+        "rate": 90.0
       },
       "monthly": [
         {
@@ -9504,7 +9504,7 @@
           "loan_balance": 69095312.0,
           "occupied": 27,
           "room_count": 30,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-08",
@@ -9872,13 +9872,13 @@
         {
           "initial_balance": 56000000.0,
           "rate": 0.032,
-          "current_balance": 55179131.0
+          "current_balance": 55014456.0
         }
       ],
       "occupancy": {
-        "occupied": 15,
+        "occupied": 16,
         "total": 24,
-        "rate": 62.5
+        "rate": 66.7
       },
       "monthly": [
         {
@@ -9975,7 +9975,7 @@
           "loan_balance": 55014456.0,
           "occupied": 16,
           "room_count": 24,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-08",
@@ -10052,7 +10052,7 @@
         "A-201": {
           "room": "A-201",
           "items": {
-            "家賃＋共益費": 40000.0
+            "家賃＋共益費": 80000.0
           }
         },
         "A-202": {
@@ -10167,6 +10167,236 @@
       ]
     },
     {
+      "id": "higashimatsuyama_verdi",
+      "name": "東松山ヴェルディ",
+      "display_name": "東松山ヴェルディ（A・B棟）",
+      "entity": "あっぷるキャピタル",
+      "location": {
+        "pref": "埼玉県",
+        "city": "東松山市",
+        "address": "新宿町"
+      },
+      "type": "2棟AP・木造",
+      "acquired": "2026-06",
+      "price": 63000000,
+      "units": 22,
+      "lender": "芝信用金庫大森支店",
+      "loans": [
+        {
+          "initial_balance": 53000000,
+          "rate": 0.0345,
+          "current_balance": 52846357.0
+        }
+      ],
+      "occupancy": {
+        "occupied": 21,
+        "total": 22,
+        "rate": 95.5
+      },
+      "monthly": [
+        {
+          "month": "2026-06",
+          "rent_total": 0,
+          "expense_total": 0,
+          "debt_service": 0,
+          "cashflow": 0,
+          "expense_details": {},
+          "loan_balance": 53000000.0,
+          "occupied": 0,
+          "room_count": 22,
+          "is_forecast": false,
+          "is_synthetic": true
+        },
+        {
+          "month": "2026-07",
+          "rent_total": 710000.0,
+          "expense_total": 40205.0,
+          "debt_service": 278882.0,
+          "cashflow": 390913.0,
+          "expense_details": {
+            "管理料": -39050.0,
+            "振込手数料": -605.0,
+            "精算書発行料": -550.0
+          },
+          "loan_balance": 52846357.0,
+          "occupied": 21,
+          "room_count": 22,
+          "is_forecast": false
+        },
+        {
+          "month": "2026-08",
+          "rent_total": 710000.0,
+          "expense_total": 40205.0,
+          "debt_service": 306018.0,
+          "cashflow": 363777.0,
+          "expense_details": {
+            "管理料": -39050.0,
+            "振込手数料": -605.0,
+            "精算書発行料": -550.0
+          },
+          "loan_balance": 52692272.0,
+          "occupied": 21,
+          "room_count": 22,
+          "is_forecast": true
+        },
+        {
+          "month": "2026-09",
+          "rent_total": 710000.0,
+          "expense_total": 40205.0,
+          "debt_service": 306018.0,
+          "cashflow": 363777.0,
+          "expense_details": {
+            "管理料": -39050.0,
+            "振込手数料": -605.0,
+            "精算書発行料": -550.0
+          },
+          "loan_balance": 52537744.0,
+          "occupied": 21,
+          "room_count": 22,
+          "is_forecast": true
+        }
+      ],
+      "rooms": {
+        "A101": {
+          "room": "A101",
+          "items": {
+            "家賃＋共益費": 31000.0
+          }
+        },
+        "A102": {
+          "room": "A102",
+          "items": {
+            "家賃＋共益費": 39000.0
+          }
+        },
+        "A103": {
+          "room": "A103",
+          "items": {
+            "家賃＋共益費": 31000.0
+          }
+        },
+        "A105": {
+          "room": "A105",
+          "items": {
+            "家賃＋共益費": 31000.0
+          }
+        },
+        "A106": {
+          "room": "A106",
+          "items": {
+            "家賃＋共益費": 31000.0
+          }
+        },
+        "A201": {
+          "room": "A201",
+          "items": {
+            "家賃＋共益費": 31000.0
+          }
+        },
+        "A202": {
+          "room": "A202",
+          "items": {
+            "家賃＋共益費": 31000.0
+          }
+        },
+        "A203": {
+          "room": "A203",
+          "items": {
+            "家賃＋共益費": 31000.0
+          }
+        },
+        "A205": {
+          "room": "A205",
+          "items": {
+            "家賃＋共益費": 0
+          }
+        },
+        "A206": {
+          "room": "A206",
+          "items": {
+            "家賃＋共益費": 31000.0
+          }
+        },
+        "B101": {
+          "room": "B101",
+          "items": {
+            "家賃＋共益費": 31000.0
+          }
+        },
+        "B102": {
+          "room": "B102",
+          "items": {
+            "家賃＋共益費": 39000.0
+          }
+        },
+        "B103": {
+          "room": "B103",
+          "items": {
+            "家賃＋共益費": 33000.0
+          }
+        },
+        "B105": {
+          "room": "B105",
+          "items": {
+            "家賃＋共益費": 31000.0
+          }
+        },
+        "B106": {
+          "room": "B106",
+          "items": {
+            "家賃＋共益費": 31000.0
+          }
+        },
+        "B107": {
+          "room": "B107",
+          "items": {
+            "家賃＋共益費": 31000.0
+          }
+        },
+        "B201": {
+          "room": "B201",
+          "items": {
+            "家賃＋共益費": 36000.0
+          }
+        },
+        "B202": {
+          "room": "B202",
+          "items": {
+            "家賃＋共益費": 32000.0
+          }
+        },
+        "B203": {
+          "room": "B203",
+          "items": {
+            "家賃＋共益費": 31000.0
+          }
+        },
+        "B205": {
+          "room": "B205",
+          "items": {
+            "家賃＋共益費": 31000.0
+          }
+        },
+        "B206": {
+          "room": "B206",
+          "items": {
+            "家賃＋共益費": 31000.0
+          }
+        },
+        "B207": {
+          "room": "B207",
+          "items": {
+            "家賃＋共益費": 33000.0
+          }
+        }
+      },
+      "repairs": [],
+      "images": [],
+      "photo_pdfs": [
+        "02. あっぷるキャピタル/J. 東松山ヴェルディ/写真.pdf"
+      ]
+    },
+    {
       "id": "yonezawa_ks",
       "name": "米沢KS春日",
       "display_name": "米沢KS春日",
@@ -10185,13 +10415,13 @@
         {
           "initial_balance": 28000000.0,
           "rate": 0.022,
-          "current_balance": 22879128.0
+          "current_balance": 22783558.0
         }
       ],
       "occupancy": {
-        "occupied": 6,
+        "occupied": 8,
         "total": 8,
-        "rate": 75.0
+        "rate": 100.0
       },
       "monthly": [
         {
@@ -11046,7 +11276,7 @@
           "loan_balance": 22783558.0,
           "occupied": 8,
           "room_count": 8,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-08",
@@ -11083,19 +11313,19 @@
         "101": {
           "room": "101",
           "items": {
-            "家賃": 48000.0
+            "家賃": 48700.0
           }
         },
         "102": {
           "room": "102",
           "items": {
-            "家賃": 55000.0
+            "家賃": 55700.0
           }
         },
         "103": {
           "room": "103",
           "items": {
-            "家賃": 100000.0
+            "家賃": 101400.0
           }
         },
         "105": {
@@ -11107,25 +11337,25 @@
         "201": {
           "room": "201",
           "items": {
-            "家賃": 43000.0
+            "家賃": 43700.0
           }
         },
         "202": {
           "room": "202",
           "items": {
-            "家賃": 52000.0
+            "家賃": 52700.0
           }
         },
         "203": {
           "room": "203",
           "items": {
-            "家賃": 43000.0
+            "家賃": 87400.0
           }
         },
         "205": {
           "room": "205",
           "items": {
-            "家賃": 45000.0
+            "家賃": 45700.0
           }
         }
       },
@@ -11234,7 +11464,7 @@
         {
           "initial_balance": 41000000,
           "rate": 0,
-          "current_balance": 40582000.0
+          "current_balance": 40373000.0
         }
       ],
       "occupancy": {
@@ -11310,7 +11540,7 @@
           "loan_balance": 40373000.0,
           "occupied": 14,
           "room_count": 16,
-          "is_forecast": true
+          "is_forecast": false
         },
         {
           "month": "2026-08",
